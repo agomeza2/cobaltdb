@@ -1,2 +1,2 @@
 # cobaltdb
-opensource graphic database manager 
+opensource serverless graphic database manager.  
