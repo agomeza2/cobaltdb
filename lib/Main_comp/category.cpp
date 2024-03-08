@@ -1,0 +1,4 @@
+class category{
+	string name;	
+	
+} 
