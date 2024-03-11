@@ -1,13 +1,16 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <cctype>
+#include <stdexcept>
 
 enum TokenType {
-    SEARCH, WHERE, CATEGORY, SHOW, GRAPH, FUNC, CREATE, INT, FLOAT, STRING, BOOL,
-    DATE, COMMON, WHICH, FOR, WHILE, LOOP, IF, ELSE, ELIF, ALTER, REMOVE, DATABASE,
-    DATABASES, USE, RELATION, NIL, AND, NOT, EQ, OR, TRUE, FALSE, GROUP_BY, HOW_MANY,
-    RETURN, ADD, OPEN_PAREN, CLOSE_PAREN, BACKSLASH, OPEN_BRACKET, CLOSE_BRACKET,
-    COMMA, IDENTIFIER, NUMBER, STRING_LITERAL, COMMENT, ERROR
+    CREATE, DATABASE, USE, CATEGORY, NODE, RELATION, AS, ASSIGN, SHOW, ALTER, REMOVE, ADD,
+    COMMON, SEARCH, INT, FLOAT, DATE, STRING, BOOL, GROUP_BY, HOW_MANY, DESC, ASC, WHERE,
+    SEMICOLON, DOUBLE_SLASH_COMMENT, SLASH_STAR_COMMENT, COMMA, ARROW, OPEN_PAREN, CLOSE_PAREN,
+    OPEN_BRACKET, CLOSE_BRACKET, COLON, IDENTIFIER, INTEGER, FLOAT_LITERAL, DATE_LITERAL,
+    STRING_LITERAL, BOOL_LITERAL, NIL, // Additional tokens for literals
+    ERROR
 };
 
 struct Token {
@@ -28,36 +31,24 @@ public:
 
         char currentChar = input[currentPosition];
 
-        // Check for comments
-        if (currentChar == '/') {
-            if (currentPosition + 1 < input.size() && input[currentPosition + 1] == '/') {
+        if (currentChar == '/' && currentPosition + 1 < input.size()) {
+            if (input[currentPosition + 1] == '/') {
                 processSingleLineComment();
                 return getNextToken(); // Recursively get the next token after a comment
-            } else if (currentPosition + 1 < input.size() && input[currentPosition + 1] == '*') {
+            } else if (input[currentPosition + 1] == '*') {
                 processMultiLineComment();
                 return getNextToken(); // Recursively get the next token after a comment
             }
         }
 
-        // Check for symbols
-        switch (currentChar) {
-            case '(': advance(); return {OPEN_PAREN, "("};
-            case ')': advance(); return {CLOSE_PAREN, ")"};
-            case '\\': advance(); return {BACKSLASH, "\\"};
-            case '[': advance(); return {OPEN_BRACKET, "["};
-            case ']': advance(); return {CLOSE_BRACKET, "]"};
-            case ',': advance(); return {COMMA, ","};
-            default: break;
-        }
-
-        if (isalpha(currentChar) || currentChar == '_') {
-            return processIdentifier();
-        } else if (isdigit(currentChar)) {
+        if (isdigit(currentChar) || (currentChar == '-' && isdigit(input[currentPosition + 1]))) {
             return processNumber();
+        } else if (isalpha(currentChar) || currentChar == '_') {
+            return processIdentifier();
         } else if (currentChar == '\"') {
             return processStringLiteral();
         } else {
-            return processOperator();
+            return processSymbol();
         }
     }
 
@@ -91,6 +82,21 @@ private:
         advance();
     }
 
+    Token processNumber() {
+        std::string number;
+        while (currentPosition < input.size() &&
+               (isdigit(input[currentPosition]) || input[currentPosition] == '.')) {
+            number += input[currentPosition++];
+        }
+
+        // Check if it's a floating-point number
+        if (number.find('.') != std::string::npos) {
+            return {FLOAT_LITERAL, number};
+        } else {
+            return {INTEGER, number};
+        }
+    }
+
     Token processIdentifier() {
         std::string identifier;
         while (currentPosition < input.size() &&
@@ -98,44 +104,16 @@ private:
             identifier += input[currentPosition++];
         }
 
-        // Check if the identifier is a keyword
-        if (identifier == "SEARCH") return {SEARCH, identifier};
-        else if (identifier == "WHERE") return {WHERE, identifier};
-        else if (identifier == "CATEGORY") return {CATEGORY, identifier};
-        else if (identifier == "SHOW") return {SHOW, identifier};
-        else if (identifier == "GRAPH") return {GRAPH, identifier};
-        else if (identifier == "FUNC") return {FUNC, identifier};
-        else if (identifier == "CREATE") return {CREATE, identifier};
-        else if (identifier == "INT") return {INT, identifier};
-        else if (identifier == "FLOAT") return {FLOAT, identifier};
-        else if (identifier == "STRING") return {STRING, identifier};
-        else if (identifier == "BOOL") return {BOOL, identifier};
-        else if (identifier == "DATE") return {DATE, identifier};
-        else if (identifier == "COMMON") return {COMMON, identifier};
-        else if (identifier == "WHICH") return {WHICH, identifier};
-        else if (identifier == "FOR") return {FOR, identifier};
-        else if (identifier == "WHILE") return {WHILE, identifier};
-        else if (identifier == "LOOP") return {LOOP, identifier};
-        else if (identifier == "IF") return {IF, identifier};
-        else if (identifier == "ELSE") return {ELSE, identifier};
-        else if (identifier == "ELIF") return {ELIF, identifier};
-        else if (identifier == "ALTER") return {ALTER, identifier};
-        else if (identifier == "ADD") return {ADD, identifier};
-        else if (identifier == "REMOVE") return {REMOVE, identifier};
-        else if (identifier == "DATABASE") return {DATABASE, identifier};
-        else if (identifier == "DATABASES") return {DATABAES,identifier};
-}
- Token processNumber() {
-        std::string number;
-        while (currentPosition < input.size() && (isdigit(input[currentPosition]) || input[currentPosition] == '.')) {
-            number += input[currentPosition++];
-        }
-
-        // Check if it's a floating-point number
-        if (number.find('.') != std::string::npos) {
-            return {FLOAT, number};
+        // Check if it's a keyword or boolean literal
+        if (identifier == "TRUE" || identifier == "FALSE") {
+            return {BOOL_LITERAL, identifier};
         } else {
-            return {INT, number};
+            // Check if it's a keyword
+            if (isKeyword(identifier)) {
+                return {getKeywordType(identifier), identifier};
+            } else {
+                return {IDENTIFIER, identifier};
+            }
         }
     }
 
@@ -149,12 +127,68 @@ private:
         return {STRING_LITERAL, literal};
     }
 
-    Token processDate() {
-        std::string date;
-        while (currentPosition < input.size() && (isdigit(input[currentPosition]) || input[currentPosition] == '/')) {
-            date += input[currentPosition++];
+    Token processSymbol() {
+        char currentChar = input[currentPosition++];
+        switch (currentChar) {
+            case ';': return {SEMICOLON, ";"};
+            case ',': return {COMMA, ","};
+            case '(': return {OPEN_PAREN, "("};
+            case ')': return {CLOSE_PAREN, ")"};
+            case '[': return {OPEN_BRACKET, "["};
+            case ']': return {CLOSE_BRACKET, "]"};
+            case ':': return {COLON, ":"};
+            case '-':
+                if (currentPosition < input.size() && isdigit(input[currentPosition])) {
+                    return processNumber(); // Negative number
+                } else {
+                    return {ERROR, "Unexpected character: -"};
+                }
+            case '=':
+                if (currentPosition < input.size() && input[currentPosition] == '>') {
+                    advance(); // Skip '>'
+                    return {ARROW, "=>"};
+                } else {
+                    return {ASSIGN, "="};
+                }
+            default: return {ERROR, "Unexpected character: " + std::string(1, currentChar)};
         }
-
-        return {DATE, date};
     }
-    };
+
+    bool isKeyword(const std::string& identifier) const {
+        static const std::vector<std::string> keywords = {
+            "CREATE", "DATABASE", "USE", "CATEGORY", "NODE", "RELATION", "AS", "SHOW",
+            "ALTER", "REMOVE", "ADD", "COMMON", "SEARCH", "INT", "FLOAT", "DATE", "STRING",
+            "BOOL", "GROUP_BY", "HOW_MANY", "DESC", "ASC", "WHERE"
+        };
+        return std::find(keywords.begin(), keywords.end(), identifier) != keywords.end();
+    }
+
+    TokenType getKeywordType(const std::string& identifier) const {
+        // Implement a mapping from keyword string to TokenType
+        // Add more cases as needed
+        if (identifier == "CREATE") return CREATE;
+        else if (identifier == "DATABASE") return DATABASE;
+        else if (identifier == "USE") return USE;
+        else if (identifier == "CATEGORY") return CATEGORY;
+        else if (identifier == "NODE") return NODE;
+        else if (identifier == "RELATION") return RELATION;
+        else if (identifier == "AS") return AS;
+        else if (identifier == "SHOW") return SHOW;
+        else if (identifier == "ALTER") return ALTER;
+        else if (identifier == "REMOVE") return REMOVE;
+        else if (identifier == "ADD") return ADD;
+        else if (identifier == "COMMON") return COMMON;
+        else if (identifier == "SEARCH") return SEARCH;
+        else if (identifier == "INT") return INT;
+        else if (identifier == "FLOAT") return FLOAT;
+        else if (identifier == "DATE") return DATE;
+        else if (identifier == "STRING") return STRING;
+        else if (identifier == "BOOL") return BOOL;
+        else if (identifier == "GROUP_BY") return GROUP_BY;
+        else if (identifier == "HOW_MANY") return HOW_MANY;
+        else if (identifier == "DESC") return DESC;
+        else if (identifier == "ASC") return ASC;
+        else if (identifier == "WHERE") return WHERE;
+        else return ERROR; // Default case, should not happen
+    }
+};
