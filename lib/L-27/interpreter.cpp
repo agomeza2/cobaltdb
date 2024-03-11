@@ -1,14 +1,10 @@
-#include<lexer.cpp>
+#include"lexer.cpp"
 class interpreter{  
-
-void lexer_init(string input){
-	 std::ostringstream codeStream;
-	 std::string line;
-	     while (std::getline(std::cin, line)) {
-	         codeStream << line << '\n';
-	     }
+public:
+void lexer_init(std::string input){
 	 
-	     Lexer lexer(codeStream.str());
+	     Lexer lexer(input);
+		 std::cout<<"lexer lexing";
 	 
 	    
 	     Token token;
