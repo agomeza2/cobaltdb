@@ -3,7 +3,7 @@
 
 int main(){
     interpreter interperter;
-    Node joe("Joe","people",2,35,40);
+    Node joe("people","Joe", "age", 42, "salary", 346.87, "Greeting", "Hello, i'm Joe");
     while(1){
         std::cout<<"User=>";
         std::ostringstream codeStream;
