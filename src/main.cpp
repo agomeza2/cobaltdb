@@ -1,9 +1,11 @@
 #include "../lib/L-27/interpreter.cpp"
-#include "../lib/Main_comp/node.cpp"
+#include "../lib/Main_comp/relation.cpp"
 
 int main(){
     interpreter interperter;
-    Node joe("people","Joe", "age", 42, "salary", 346.87, "Greeting", "Hello,Joe");
+    Node Joe("people","Joe", "age", 42, "salary", 346.87, "Greeting", "Hello,Joe");
+    Node Mia("people","Mia", "age", 22, "salary", 398.87, "Greeting", "Hello,Mia");
+    Relation Teach(Joe,Mia,"Teach","Tutoria","time",12,"classroom",202);
     while(1){
         std::cout<<"User=>";
         std::ostringstream codeStream;
@@ -11,11 +13,12 @@ int main(){
 	    std::getline(std::cin, line); 
 	    codeStream << line << '\n'; 
         interperter.lexer_init(codeStream.str());
-        joe.show();
-        joe.alter("age",35);
-        joe.remove("salary");
-        joe.add("service",true);
-        joe.show();
+        Joe.show();
+        Joe.alter("age",35);
+        Joe.remove("salary");
+        Joe.add("service",true);
+        Joe.show();
+        Teach.show();
 
     } 
 } 

@@ -56,7 +56,9 @@ public:
     void alter(const std::string& key, std::any value) {
         properties[key] = value;
     }
-
+    void alter_name(std::string name){
+        this->name=name;
+    } 
     void remove(const std::string& key) {
         properties.erase(key);
     }
