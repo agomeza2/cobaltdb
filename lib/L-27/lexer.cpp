@@ -1,148 +1,160 @@
 #include <iostream>
-#include <cctype>
 #include <vector>
+#include <sstream>
 
-// Token types
 enum TokenType {
-    LPAREN,   // (
-    RPAREN,   // )
-    LBRACKET, // [
-    RBRACKET, // ]
-    STRING,
-    FLOAT,
-    DATE,
-    COLON,    // :
-    SEMICOLON, // ;
-    BACKSLASH, // \\
-    ASTERISK,  // *
-    ASTERISK_BACKSLASH, // *\
-
-    END_OF_FILE
+    SEARCH, WHERE, CATEGORY, SHOW, GRAPH, FUNC, CREATE, INT, FLOAT, STRING, BOOL,
+    DATE, COMMON, WHICH, FOR, WHILE, LOOP, IF, ELSE, ELIF, ALTER, REMOVE, DATABASE,
+    DATABASES, USE, RELATION, NIL, AND, NOT, EQ, OR, TRUE, FALSE, GROUP_BY, HOW_MANY,
+    RETURN, ADD, OPEN_PAREN, CLOSE_PAREN, BACKSLASH, OPEN_BRACKET, CLOSE_BRACKET,
+    COMMA, IDENTIFIER, NUMBER, STRING_LITERAL, COMMENT, ERROR
 };
 
-// Token structure
 struct Token {
     TokenType type;
-    std::string value; // For STRING token
+    std::string value;
 };
 
 class Lexer {
 public:
-    Lexer(const std::string& input) : input(input), position(0) {}
+    Lexer(const std::string& input) : input(input), currentPosition(0) {}
 
-    // Get the next token from the input
     Token getNextToken() {
-        while (position < input.length()) {
-            char currentChar = input[position];
+        skipWhitespace();
 
-            if (currentChar == '(') {
-                position++;
-                return {LPAREN, ""};
-            } else if (currentChar == ')') {
-                position++;
-                return {RPAREN, ""};
-            } else if (currentChar == '[') {
-                position++;
-                return {LBRACKET, ""};
-            } else if (currentChar == ']') {
-                position++;
-                return {RBRACKET, ""};
-            } else if (currentChar == ':') {
-                position++;
-                return {COLON, ""};
-            } else if (currentChar == ';') {
-                position++;
-                return {SEMICOLON, ""};
-            } else if (currentChar == '\\') {
-                position++;
-                if (position < input.length() && input[position] == '*') {
-                    position++;
-                    return {ASTERISK_BACKSLASH, ""};
-                } else {
-                    return {BACKSLASH, ""};
-                }
-            } else if (currentChar == '*') {
-                position++;
-                return {ASTERISK, ""};
-            } else if (currentChar == '"') {
-                return parseString();
-            } else if (isalpha(currentChar)) {
-                return parseWord();
-            } else if (isdigit(currentChar) || currentChar == '.') {
-                return parseFloatOrDate();
-            } else if (isspace(currentChar)) {
-                // Skip whitespace
-                position++;
-            } else {
-                // Handle unknown characters
-                std::cerr << "Error: Unexpected character '" << currentChar << "'" << std::endl;
-                exit(1);
+        if (currentPosition >= input.size()) {
+            return {ERROR, "EOF"};
+        }
+
+        char currentChar = input[currentPosition];
+
+        // Check for comments
+        if (currentChar == '/') {
+            if (currentPosition + 1 < input.size() && input[currentPosition + 1] == '/') {
+                processSingleLineComment();
+                return getNextToken(); // Recursively get the next token after a comment
+            } else if (currentPosition + 1 < input.size() && input[currentPosition + 1] == '*') {
+                processMultiLineComment();
+                return getNextToken(); // Recursively get the next token after a comment
             }
         }
 
-        // End of file reached
-        return {END_OF_FILE, ""};
+        // Check for symbols
+        switch (currentChar) {
+            case '(': advance(); return {OPEN_PAREN, "("};
+            case ')': advance(); return {CLOSE_PAREN, ")"};
+            case '\\': advance(); return {BACKSLASH, "\\"};
+            case '[': advance(); return {OPEN_BRACKET, "["};
+            case ']': advance(); return {CLOSE_BRACKET, "]"};
+            case ',': advance(); return {COMMA, ","};
+            default: break;
+        }
+
+        if (isalpha(currentChar) || currentChar == '_') {
+            return processIdentifier();
+        } else if (isdigit(currentChar)) {
+            return processNumber();
+        } else if (currentChar == '\"') {
+            return processStringLiteral();
+        } else {
+            return processOperator();
+        }
     }
 
 private:
-    // Parse a string enclosed in double quotes
-    Token parseString() {
-        position++; // Skip the opening double quote
-        size_t startPos = position;
+    const std::string& input;
+    size_t currentPosition;
 
-        while (position < input.length() && input[position] != '"') {
-            position++;
-        }
-
-        if (position == input.length()) {
-            std::cerr << "Error: Unterminated string literal" << std::endl;
-            exit(1);
-        }
-
-        std::string value = input.substr(startPos, position - startPos);
-        position++; // Skip the closing double quote
-        return {STRING, value};
+    void advance() {
+        currentPosition++;
     }
 
-    // Parse a word (e.g., keyword)
-    Token parseWord() {
-        size_t startPos = position;
+    void skipWhitespace() {
+        while (currentPosition < input.size() && isspace(input[currentPosition])) {
+            advance();
+        }
+    }
 
-        while (position < input.length() && (isalnum(input[position]) || input[position] == '_')) {
-            position++;
+    void processSingleLineComment() {
+        while (currentPosition < input.size() && input[currentPosition] != '\n') {
+            advance();
+        }
+    }
+
+    void processMultiLineComment() {
+        advance(); // Skip the opening /*
+        while (currentPosition + 1 < input.size() &&
+               (input[currentPosition] != '*' || input[currentPosition + 1] != '/')) {
+            advance();
+        }
+        advance(); // Skip the closing */
+        advance();
+    }
+
+    Token processIdentifier() {
+        std::string identifier;
+        while (currentPosition < input.size() &&
+               (isalnum(input[currentPosition]) || input[currentPosition] == '_')) {
+            identifier += input[currentPosition++];
         }
 
-        std::string value = input.substr(startPos, position - startPos);
+        // Check if the identifier is a keyword
+        if (identifier == "SEARCH") return {SEARCH, identifier};
+        else if (identifier == "WHERE") return {WHERE, identifier};
+        else if (identifier == "CATEGORY") return {CATEGORY, identifier};
+        else if (identifier == "SHOW") return {SHOW, identifier};
+        else if (identifier == "GRAPH") return {GRAPH, identifier};
+        else if (identifier == "FUNC") return {FUNC, identifier};
+        else if (identifier == "CREATE") return {CREATE, identifier};
+        else if (identifier == "INT") return {INT, identifier};
+        else if (identifier == "FLOAT") return {FLOAT, identifier};
+        else if (identifier == "STRING") return {STRING, identifier};
+        else if (identifier == "BOOL") return {BOOL, identifier};
+        else if (identifier == "DATE") return {DATE, identifier};
+        else if (identifier == "COMMON") return {COMMON, identifier};
+        else if (identifier == "WHICH") return {WHICH, identifier};
+        else if (identifier == "FOR") return {FOR, identifier};
+        else if (identifier == "WHILE") return {WHILE, identifier};
+        else if (identifier == "LOOP") return {LOOP, identifier};
+        else if (identifier == "IF") return {IF, identifier};
+        else if (identifier == "ELSE") return {ELSE, identifier};
+        else if (identifier == "ELIF") return {ELIF, identifier};
+        else if (identifier == "ALTER") return {ALTER, identifier};
+        else if (identifier == "ADD") return {ADD, identifier};
+        else if (identifier == "REMOVE") return {REMOVE, identifier};
+        else if (identifier == "DATABASE") return {DATABASE, identifier};
+        else if (identifier == "DATABASES") return {DATABAES,identifier};
+}
+ Token processNumber() {
+        std::string number;
+        while (currentPosition < input.size() && (isdigit(input[currentPosition]) || input[currentPosition] == '.')) {
+            number += input[currentPosition++];
+        }
 
-        // Check if the word represents a keyword
-        if (value == "float") {
-            return {FLOAT, value};
-        } else if (value == "date") {
-            return {DATE, value};
+        // Check if it's a floating-point number
+        if (number.find('.') != std::string::npos) {
+            return {FLOAT, number};
         } else {
-            return {STRING, value};
+            return {INT, number};
         }
     }
 
-    // Parse a float or date
-    Token parseFloatOrDate() {
-        size_t startPos = position;
-
-        while (position < input.length() && (isdigit(input[position]) || input[position] == '.')) {
-            position++;
+    Token processStringLiteral() {
+        std::string literal;
+        currentPosition++; // Skip the opening quote
+        while (currentPosition < input.size() && input[currentPosition] != '\"') {
+            literal += input[currentPosition++];
         }
-
-        std::string value = input.substr(startPos, position - startPos);
-
-        // Check if the value represents a float or date
-        if (value.find('.') != std::string::npos) {
-            return {FLOAT, value};
-        } else {
-            return {DATE, value};
-        }
+        currentPosition++; // Skip the closing quote
+        return {STRING_LITERAL, literal};
     }
 
-    std::string input;
-    size_t position;
-};
+    Token processDate() {
+        std::string date;
+        while (currentPosition < input.size() && (isdigit(input[currentPosition]) || input[currentPosition] == '/')) {
+            date += input[currentPosition++];
+        }
 
+        return {DATE, date};
+    }
+    };
