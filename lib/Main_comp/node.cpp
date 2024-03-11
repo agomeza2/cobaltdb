@@ -26,6 +26,8 @@ public:
     void printElement(const std::any& element) {
     if (element.type() == typeid(std::string)) {
         std::cout << std::any_cast<std::string>(element);
+    }else if (element.type() == typeid(const char*)){
+        std::cout<<"\""<<std::any_cast<const char*>(element)<<"\""; 
     } else if (element.type() == typeid(int)) {
         std::cout << std::any_cast<int>(element);
     } else if (element.type() == typeid(double)) {
