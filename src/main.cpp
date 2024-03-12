@@ -19,6 +19,7 @@ int main(){
         Joe.add("service",true);
         Joe.show();
         Teach.show();
+        Joe.show(); 
 
     } 
 } 
