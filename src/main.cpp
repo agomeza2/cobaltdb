@@ -8,6 +8,7 @@ int main(){
     Node Mia("people","Mia", "age", 22, "salary", 398.87, "Greeting", "Hello,Mia");
     Relation Teach(Joe,Mia,"Teach","Tutoria","time",12,"classroom",202);
     storage.create_folder();
+    std::cout<<"creating foler \n";
     while(1){
         std::cout<<"User=>";
         std::ostringstream codeStream;

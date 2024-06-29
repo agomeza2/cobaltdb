@@ -1,23 +1,45 @@
 #include <iostream>
-#include <sys/stat.h>
+#include <filesystem>
+
+#ifdef _WIN32
+bool isWindows() {
+    return true;
+}
+#else
+bool isWindows() {
+    return false;
+}
+#endif
 
 class Storage {
 public:
-    void create_folder() {
-        const char* path = "../../db/as";
-        mode_t mode = 0777; // Permissions for the new directory
+    void create_folder_WIN() {
+        const wchar_t* path = L"../db/as";
         
-        // Change permissions of the parent directory if needed
-        if (chmod("../../db", mode) != 0) {
-            std::cerr << "Failed to change permissions of parent directory." << std::endl;
-            return;
+        try {
+            std::filesystem::create_directories(path);
+            std::wcout << L"Folder created successfully: " << path << std::endl;
+        } catch (const std::filesystem::filesystem_error& e) {
+            std::wcerr << "Failed to create folder: " << path << std::endl;
+            std::wcerr << "Error: " << e.what() << std::endl;
         }
-
-        // Attempt to create the directory
-        if (mkdir(path, mode) == 0) {
-            std::cout << "Folder created successfully." << std::endl;
-        } else {
-            std::cerr << "Failed to create folder." << std::endl;
+    }
+    void create_folder_LINUX() {
+        const char* path = "../db/as";
+        
+        try {
+            std::filesystem::create_directories(path);
+            std::cout << "Folder created successfully: " << path << std::endl;
+        } catch (const std::filesystem::filesystem_error& e) {
+            std::cerr << "Failed to create folder: " << path << std::endl;
+            std::cerr << "Error: " << e.what() << std::endl;
         }
+    }
+    void create_folder(){
+        if (isWindows()) {
+        this->create_folder_WIN();
+    }   else {
+        this->create_folder_LINUX();
+    }
     }
 };
