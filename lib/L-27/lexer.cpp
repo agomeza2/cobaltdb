@@ -7,7 +7,7 @@
 #include <string>
 enum TokenType {
     CREATE, DATABASE, USE, CATEGORY, NODE, RELATION, AS, ASSIGN, SHOW, ALTER, REMOVE, ADD,
-    COMMON, SEARCH, INT, FLOAT, DATE, STRING, BOOL, GROUP_BY, HOW_MANY, DESC, ASC, WHERE,
+    COMMON, SEARCH, DBINT, DBFLOAT, DBDATE, DBSTRING, DBBOOL, GROUP_BY, HOW_MANY, DESC, ASC, WHERE,
     SEMICOLON, DOUBLE_SLASH_COMMENT, SLASH_STAR_COMMENT, COMMA, ARROW, OPEN_PAREN, CLOSE_PAREN,
     OPEN_BRACKET, CLOSE_BRACKET, COLON, IDENTIFIER, INTEGER, FLOAT_LITERAL, DATE_LITERAL,
     STRING_LITERAL, BOOL_LITERAL, NIL, 
@@ -180,11 +180,11 @@ private:
         else if (identifier == "ADD") return ADD;
         else if (identifier == "COMMON") return COMMON;
         else if (identifier == "SEARCH") return SEARCH;
-        else if (identifier == "INT") return INT;
-        else if (identifier == "FLOAT") return FLOAT;
-        else if (identifier == "DATE") return DATE;
-        else if (identifier == "STRING") return STRING;
-        else if (identifier == "BOOL") return BOOL;
+        else if (identifier == "DBINT") return DBINT;
+        else if (identifier == "DBFLOAT") return DBFLOAT;
+        else if (identifier == "DBDATE") return DBDATE;
+        else if (identifier == "DBSTRING") return DBSTRING;
+        else if (identifier == "DBBOOL") return DBBOOL;
         else if (identifier == "GROUP_BY") return GROUP_BY;
         else if (identifier == "HOW_MANY") return HOW_MANY;
         else if (identifier == "DESC") return DESC;

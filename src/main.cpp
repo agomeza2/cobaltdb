@@ -9,6 +9,8 @@ int main(){
     Relation Teach(Joe,Mia,"Teach","Tutoria","time",12,"classroom",202);
     storage.create_folder();
     std::cout<<"creating foler \n";
+    storage.create_db("test"); 
+    std::cout<<"base de datos test"; 
     while(1){
         std::cout<<"User=>";
         std::ostringstream codeStream;
