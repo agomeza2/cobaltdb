@@ -2,7 +2,12 @@
 #include <any>
 #include <unordered_map>
 #include <typeinfo>
+#include "json.hpp"
+#include "json_fwd.hpp"
+#include <fstream>
+#include <iomanip>
 
+using json = nlohmann::json;
 class Node {
 public:
     std::string name;
@@ -65,5 +70,38 @@ public:
 
     void add(const std::string& key, std::any value) {
         properties[key] = value;
+    }
+
+     json toJson() const {
+        json j;
+        j["name"] = name;
+        j["label"] = label;
+        json props;
+        for (const auto& [key, value] : properties) {
+            if (value.type() == typeid(std::string)) {
+                props[key] = std::any_cast<std::string>(value);
+            } else if (value.type() == typeid(int)) {
+                props[key] = std::any_cast<int>(value);
+            } else if (value.type() == typeid(double)) {
+                props[key] = std::any_cast<double>(value);
+            } else if (value.type() == typeid(bool)) {
+                props[key] = std::any_cast<bool>(value);
+            }
+            // Add more types as needed
+        }
+        j["properties"] = props;
+        return j;
+    }
+
+    // Function to write Node attributes to a JSON file
+    void writeToJsonFile(const std::string& filename) const {
+        std::ofstream file(filename);
+        if (file.is_open()) {
+            json j = toJson();
+            file << std::setw(4) << j << std::endl; // Pretty print with indentation
+            std::cout << "Node attributes written to " << filename << std::endl;
+        } else {
+            std::cerr << "Failed to open file: " << filename << std::endl;
+        }
     }
 };

@@ -10,7 +10,8 @@ int main(){
     storage.create_folder();
     std::cout<<"creating foler \n";
     storage.create_db("test"); 
-    std::cout<<"base de datos test"; 
+    std::cout<<"base de datos test \n"; 
+    Joe.writeToJsonFile("Joe");
     while(1){
         std::cout<<"User=>";
         std::ostringstream codeStream;
