@@ -1,0 +1,10 @@
+{
+    "label": "Teach",
+    "name": "Tutoria",
+    "origen":"Mia",
+    "dest":"Joe",
+    "properties": {
+        "age": 22,
+        "salary": 398.87
+    }
+}
