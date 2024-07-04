@@ -1,4 +1,0 @@
-class category{
-	string name;	
-	
-} 
