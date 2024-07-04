@@ -11,7 +11,8 @@ int main(){
     std::cout<<"creating foler \n";
     storage.create_db("test"); 
     std::cout<<"base de datos test \n"; 
-    Joe.writeToJsonFile("Joe");
+    std::string db_path = "../db/test/";
+    Joe.writeToJsonFile(db_path,"Joe"); 
     while(1){
         std::cout<<"User=>";
         std::ostringstream codeStream;
