@@ -4,13 +4,15 @@ public:
 Node  origin; 
 Node  dest;
 std::string name;
-std::string label;
+std::string category;
+int id;
 std::unordered_map<std::string, std::any> properties;
 
 template <typename... Args>
-Relation(Node origin, Node dest, std::string label, std::string name, Args&&... args)
-    : origin(std::move(origin)), dest(std::move(dest)), label(std::move(label)), name(std::move(name)) {
+Relation(Node origin, Node dest, std::string category, std::string name, Args&&... args)
+    : origin(std::move(origin)), dest(std::move(dest)), category(std::move(category)), name(std::move(name)) {
     initializeProperties(std::forward<Args>(args)...);
+    id=get_next_id(category);
     }
 
     void initializeProperties() {}
@@ -40,7 +42,7 @@ void printElement(const std::any& element) {
 void show(){
     this->origin.show();
     std::cout<<"=>";
-    std::cout << "(" << this->label << ":" << this->name << ")(";
+    std::cout << "(" << this->category << ":" << this->name << ")(";
         size_t i = 0;
         for (const auto& [key, value] : this->properties) {
             std::cout << key << ":";
@@ -66,4 +68,51 @@ void alter(const std::string& key, std::any value) {
     void add(const std::string& key, std::any value) {
         properties[key] = value;
     }
+
+    static int get_next_id(const std::string& category) {
+        return categoryCounters[category]++;
+    }
+     json toJson() const {
+        json j;
+        j["name"] = name;
+        j["category"] = category;
+        j["Relation ID"]=id;
+        j["Origin"]= origin.name;
+        j["Origin ID"]=origin.id;
+        j["destination"]= dest.name;
+        j["destination ID"]=dest.id;
+        json props;
+        for (const auto& [key, value] : properties) {
+            if (value.type() == typeid(std::string)) {
+                props[key] = std::any_cast<std::string>(value);
+            } else if (value.type() == typeid(int)) {
+                props[key] = std::any_cast<int>(value);
+            } else if (value.type() == typeid(double)) {
+                props[key] = std::any_cast<double>(value);
+            } else if (value.type() == typeid(bool)) {
+                props[key] = std::any_cast<bool>(value);
+            }
+            // Add more types as needed
+        }
+        j["properties"] = props;
+        return j;
+    }
+
+    // Function to write Node attributes to a JSON file
+    void writeToJsonFile(const std::string& db_path,const std::string& filename) const {
+        std::ofstream file(db_path+filename);
+        if (file.is_open()) {
+            json j = toJson();
+            file << std::setw(4) << j << std::endl; // Pretty print with indentation
+            std::cout << "Node attributes written to " << filename << std::endl;
+        } else {
+            std::cerr << "Failed to open file: " << filename << std::endl;
+        }
+    }
+
+    private:
+    // Static map to keep track of the next ID for each category
+    static std::unordered_map<std::string, int> categoryCounters;
 };  
+// Initialize the static member
+std::unordered_map<std::string, int> Relation::categoryCounters;

@@ -11,13 +11,15 @@ using json = nlohmann::json;
 class Node {
 public:
     std::string name;
-    std::string label;
+    std::string category;
+    int id;
     std::unordered_map<std::string, std::any> properties;
 
     template <typename... Args>
-    Node(std::string label, std::string name, Args&&... args)
-        :label(std::move(label)),name(std::move(name))  {
+    Node(std::string category, std::string name, Args&&... args)
+        :category(std::move(category)),name(std::move(name))  {
         initializeProperties(std::forward<Args>(args)...);
+        id=get_next_id(category);
     }
 
     void initializeProperties() {}
@@ -46,7 +48,7 @@ public:
 
 
     void show() {
-        std::cout << "(" << this->label << ":" << this->name << ")(";
+        std::cout << "(" << this->category << ":" << this->name << ")(";
         size_t i = 0;
         for (const auto& [key, value] : this->properties) {
             std::cout << key << ":";
@@ -71,11 +73,15 @@ public:
     void add(const std::string& key, std::any value) {
         properties[key] = value;
     }
+    static int get_next_id(const std::string& category) {
+        return categoryCounters[category]++;
+    }
 
      json toJson() const {
         json j;
         j["name"] = name;
-        j["label"] = label;
+        j["category"] = category;
+        j["ID"]= id;
         json props;
         for (const auto& [key, value] : properties) {
             if (value.type() == typeid(std::string)) {
@@ -104,4 +110,11 @@ public:
             std::cerr << "Failed to open file: " << filename << std::endl;
         }
     }
+
+    private:
+    // Static map to keep track of the next ID for each category
+    static std::unordered_map<std::string, int> categoryCounters;
 };
+
+// Initialize the static member
+std::unordered_map<std::string, int> Node::categoryCounters;

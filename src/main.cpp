@@ -6,13 +6,21 @@ int main(){
     Storage storage;
     Node Joe("people","Joe", "age", 42, "salary", 346.87, "Greeting", "Hello,Joe");
     Node Mia("people","Mia", "age", 22, "salary", 398.87, "Greeting", "Hello,Mia");
+    Node Jose("people","Jose", "age",19, "salary", 98.87, "Greeting", "Hello,Jose");
+    Node Makoto("people","Makoto", "age", 77, "salary", 88.87, "Greeting", "Hello,Makoto");
     Relation Teach(Joe,Mia,"Teach","Tutoria","time",12,"classroom",202);
+    Relation Teach2(Joe,Mia,"Teach","Tutoria2","time",13,"classroom",205);
     storage.create_folder();
     std::cout<<"creating foler \n";
     storage.create_db("test"); 
     std::cout<<"base de datos test \n"; 
     std::string db_path = "../db/test/";
-    Joe.writeToJsonFile(db_path,"Joe"); 
+    Mia.writeToJsonFile(db_path,Mia.name);
+    Joe.writeToJsonFile(db_path,Joe.name);
+    Jose.writeToJsonFile(db_path,Jose.name); 
+    Makoto.writeToJsonFile(db_path,Makoto.name);
+    Teach.writeToJsonFile(db_path,Teach.name);
+    Teach2.writeToJsonFile(db_path,Teach2.name);
     while(1){
         std::cout<<"User=>";
         std::ostringstream codeStream;

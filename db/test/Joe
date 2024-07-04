@@ -1,5 +1,6 @@
 {
-    "label": "people",
+    "ID": 0,
+    "category": "people",
     "name": "Joe",
     "properties": {
         "age": 42,
