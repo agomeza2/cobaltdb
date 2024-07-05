@@ -115,4 +115,4 @@ void alter(const std::string& key, std::any value) {
     static std::unordered_map<std::string, int> categoryCounters;
 };  
 // Initialize the static member
-std::unordered_map<std::string, int> Relation::categoryCounters;
+std::unordered_map<std::string, int> Relation::categoryCounters ={};

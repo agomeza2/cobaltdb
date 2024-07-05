@@ -117,4 +117,4 @@ public:
 };
 
 // Initialize the static member
-std::unordered_map<std::string, int> Node::categoryCounters;
+std::unordered_map<std::string, int> Node::categoryCounters ={};

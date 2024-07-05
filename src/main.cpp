@@ -8,8 +8,10 @@ int main(){
     Node Mia("people","Mia", "age", 22, "salary", 398.87, "Greeting", "Hello,Mia");
     Node Jose("people","Jose", "age",19, "salary", 98.87, "Greeting", "Hello,Jose");
     Node Makoto("people","Makoto", "age", 77, "salary", 88.87, "Greeting", "Hello,Makoto");
+    Node Chito("animal","Chito","age",17,"spicies","feline","animal type","cat");
     Relation Teach(Joe,Mia,"Teach","Tutoria","time",12,"classroom",202);
     Relation Teach2(Joe,Mia,"Teach","Tutoria2","time",13,"classroom",205);
+    Relation MakoChito(Makoto,Chito,"Owner","only owner","time",17,"place","yokohama");
     storage.create_folder();
     std::cout<<"creating foler \n";
     storage.create_db("test"); 
@@ -21,6 +23,8 @@ int main(){
     Makoto.writeToJsonFile(db_path,Makoto.name);
     Teach.writeToJsonFile(db_path,Teach.name);
     Teach2.writeToJsonFile(db_path,Teach2.name);
+    Chito.writeToJsonFile(db_path,Chito.name);
+    MakoChito.writeToJsonFile(db_path,MakoChito.name);
     while(1){
         std::cout<<"User=>";
         std::ostringstream codeStream;

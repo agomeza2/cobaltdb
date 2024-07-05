@@ -1,0 +1,12 @@
+{
+    "Origin": "Makoto",
+    "Origin ID": 3,
+    "Relation ID": 2,
+    "category": "Owner",
+    "destination": "Chito",
+    "destination ID": 4,
+    "name": "only owner",
+    "properties": {
+        "time": 17
+    }
+}
