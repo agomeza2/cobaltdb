@@ -40,6 +40,10 @@ public:
 
     void create_db(std::string db_name) {
         create_folder(db_name);
+        std::string nodes = db_name+"/Nodes";
+        std::string relations = db_name+"/Relations";
+        create_folder(nodes);
+        create_folder(relations);
     }
 };
 
