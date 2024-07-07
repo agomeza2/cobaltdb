@@ -100,7 +100,8 @@ void alter(const std::string& key, std::any value) {
 
     // Function to write Node attributes to a JSON file
     void writeToJsonFile(const std::string& db_path,const std::string& filename) const {
-        std::ofstream file(db_path+"/Relations/"+filename);
+        std::string ID =std::to_string(id); 
+        std::ofstream file(db_path+"/Relations/"+filename+"-"+ID);
         if (file.is_open()) {
             json j = toJson();
             file << std::setw(4) << j << std::endl; // Pretty print with indentation
