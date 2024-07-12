@@ -10,11 +10,11 @@ Keywords
 • GRAPH
 • FUNC
 • CREATE
-• INT
-• FLOAT
-• STRING
-• BOOL
-• DATE
+• DBINT
+• DBFLOAT
+• DBSTRING
+• DBBOOL
+• DBDATE
 • COMMON
 • WHICH
 • FOR
@@ -45,10 +45,7 @@ CREATE DATABASE test; //creamos la base de datos
 
 USE test; //seleccionamos la base de datos 
 
-//creamos la categoria persona 
-CREATE CATEGORY people(String name,INT age, FLOAT salary, DATE birthday);
-
-//creamos el nodo de una persona llamada Jo 
+//creamos directamente el nodo de una persona llamada Jo 
 (people:Jo)('Jo',35,2000.4,23/04/99);
 
 //creamos multiples nodos llamados Lili, Martyn y Constance 
