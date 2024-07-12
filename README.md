@@ -19,7 +19,7 @@ Keywords
 • WHICH
 • FOR
 • WHILE
-1• LOOP
+• LOOP
 • IF
 • ELSE
 • ELIF
