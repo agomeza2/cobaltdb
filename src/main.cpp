@@ -25,20 +25,14 @@ int main(){
     Teach2.writeToJsonFile(db_path,Teach2.name);
     Chito.writeToJsonFile(db_path,Chito.name);
     MakoChito.writeToJsonFile(db_path,MakoChito.name);
+
     while(1){
         std::cout<<"User=>";
         std::ostringstream codeStream;
 	    std::string line;
 	    std::getline(std::cin, line); 
 	    codeStream << line << '\n'; 
-        interperter.lexer_init(codeStream.str());
-        Joe.show();
-        Joe.alter("age",35);
-        Joe.remove("salary");
-        Joe.add("service",true);
-        Joe.show();
-        Teach.show();
-        Joe.show(); 
+        interperter.parser_init(codeStream.str()); 
 
     } 
 } 

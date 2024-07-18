@@ -58,6 +58,21 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "bitset": "cpp",
+        "charconv": "cpp",
+        "format": "cpp",
+        "mutex": "cpp",
+        "span": "cpp",
+        "text_encoding": "cpp",
+        "variant": "cpp",
+        "__bit_reference": "cpp",
+        "__locale": "cpp",
+        "__split_buffer": "cpp",
+        "__threading_support": "cpp",
+        "__verbose_abort": "cpp",
+        "execution": "cpp",
+        "ios": "cpp",
+        "locale": "cpp"
     }
 }

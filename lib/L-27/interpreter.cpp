@@ -1,4 +1,4 @@
-#include"lexer.cpp"
+#include"parser.cpp"
 class interpreter{  
 public:
 void lexer_init(std::string input){
@@ -14,6 +14,14 @@ void lexer_init(std::string input){
 	     } while (token.type != ERROR && token.type != EOF);
 	 
     }
-void parser_init(){
+void parser_init(std::string input ){
+	Lexer lexer(input);
+    Parser parser(lexer);
+      try {
+        parser.parse();
+        std::cout << "Parsing completed successfully." << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+    }
 } 
 };
