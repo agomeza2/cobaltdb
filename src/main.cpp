@@ -1,6 +1,7 @@
 #include "../lib/L-27/interpreter.cpp"
 #include "../lib/Main_comp/relation.cpp"
 #include "../lib/Storage/storage.cpp"
+#include "../lib/Main_comp/users.cpp"
 int main(){
     interpreter interperter;
     Storage storage;
@@ -27,6 +28,31 @@ int main(){
     Chito.writeToJsonFile(db_path,Chito.name);
     MakoChito.writeToJsonFile(db_path,MakoChito.name);
 
+    std::unordered_map<std::string, User*> users;
+
+    users["admin"] = new AdminUser("admin", "admin123");
+    users["user1"] = new StandardUser("user1", "user123");
+    users["user2"] = new StandardUser("user2", "pass123");
+
+    std::string username;
+    std::string password;
+
+    std::cout << "Enter username: ";
+    std::cin >> username;
+    std::cout << "Enter password: ";
+    std::cin >> password;
+
+    auto it = users.find(username);
+    if (it != users.end() && it->second->authenticate(password)) {
+        std::cout << "Authentication successful." << std::endl;
+        it->second->displayInfo();
+    } else {
+        std::cout << "Incorrect username or password." << std::endl;
+    }
+
+    for (auto& pair : users) {
+        delete pair.second;
+    }
     while(1){
         std::cout<<"User=>";
         std::ostringstream codeStream;
