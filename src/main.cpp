@@ -18,7 +18,7 @@ int main(){
     storage.create_db("test","Alex"); 
     storage.create_db("DB","Alex");
     std::cout<<"base de datos test \n"; 
-    std::string db_path = "../db/test/Alex";
+    std::string db_path = "../db/Alex/test";
     Mia.writeToJsonFile(db_path,Mia.name);
     Joe.writeToJsonFile(db_path,Joe.name);
     Jose.writeToJsonFile(db_path,Jose.name); 
