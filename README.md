@@ -1,7 +1,7 @@
 # cobaltdb
 opensource serverless graphic database manager.  
 
-cobaltdb works with a own custom SQL-like language:
+cobaltdb works with our own custom SQL-like language:
 Keywords
 • SEARCH
 • WHERE
