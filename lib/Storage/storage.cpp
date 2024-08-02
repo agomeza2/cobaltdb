@@ -38,12 +38,15 @@ public:
 #endif
     }
 
-    void create_db(std::string db_name) {
-        create_folder(db_name);
-        std::string nodes = db_name+"/Nodes";
-        std::string relations = db_name+"/Relations";
+    void create_db(std::string db_name,std::string user) {
+        create_folder(user+"/"+db_name);
+        std::string nodes = user+"/"+db_name+"/Nodes";
+        std::string relations = user+"/"+db_name+"/Relations";
         create_folder(nodes);
         create_folder(relations);
+    }
+     void create_user(std::string user_name) {
+        create_folder("../db/"+user_name);
     }
 };
 

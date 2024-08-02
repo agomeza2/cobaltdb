@@ -12,11 +12,12 @@ int main(){
     Relation Teach(Joe,Mia,"Teach","Tutoria","time",12,"classroom",202);
     Relation Teach2(Joe,Mia,"Teach","Tutoria2","time",13,"classroom",205);
     Relation MakoChito(Makoto,Chito,"Owner","only owner","time",17,"place","yokohama");
-    storage.create_folder();
+    storage.create_user("Alex");
     std::cout<<"creating foler \n";
-    storage.create_db("test"); 
+    storage.create_db("test","Alex"); 
+    storage.create_db("DB","Alex");
     std::cout<<"base de datos test \n"; 
-    std::string db_path = "../db/test/";
+    std::string db_path = "../db/test/Alex";
     Mia.writeToJsonFile(db_path,Mia.name);
     Joe.writeToJsonFile(db_path,Joe.name);
     Jose.writeToJsonFile(db_path,Jose.name); 

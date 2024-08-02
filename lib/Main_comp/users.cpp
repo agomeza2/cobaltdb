@@ -44,33 +44,3 @@ public:
     }
 };
 
-int main() {
-    std::unordered_map<std::string, User*> users;
-
-    users["admin"] = new AdminUser("admin", "admin123");
-    users["user1"] = new StandardUser("user1", "user123");
-    users["user2"] = new StandardUser("user2", "pass123");
-
-    std::string username;
-    std::string password;
-
-    std::cout << "Enter username: ";
-    std::cin >> username;
-    std::cout << "Enter password: ";
-    std::cin >> password;
-
-    auto it = users.find(username);
-    if (it != users.end() && it->second->authenticate(password)) {
-        std::cout << "Authentication successful." << std::endl;
-        it->second->displayInfo();
-    } else {
-        std::cout << "Incorrect username or password." << std::endl;
-    }
-
-    for (auto& pair : users) {
-        delete pair.second;
-    }
-
-    return 0;
-}
-
