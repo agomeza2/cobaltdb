@@ -77,9 +77,9 @@ void alter(const std::string& key, std::any value) {
         j["name"] = name;
         j["category"] = category;
         j["Relation ID"]=id;
-        j["Origin"]= origin.name;
-        j["Origin ID"]=origin.id;
-        j["destination"]= dest.name;
+        j["source"]= origin.name;
+        j["source ID"]=origin.id;
+        j["target"]= dest.name;
         j["destination ID"]=dest.id;
         json props;
         for (const auto& [key, value] : properties) {
