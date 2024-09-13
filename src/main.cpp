@@ -5,7 +5,7 @@
 int main(){
     interpreter interperter;
     Storage storage;
-    DataProcess data_process;
+    //DataProcess data_process;
     Node Joe("people","Joe", "age", 42, "salary", 346.87, "Greeting", "Hello,Joe");
     Node Mia("people","Mia", "age", 22, "salary", 398.87, "Greeting", "Hello,Mia");
     Node Jose("people","Jose", "age",19, "salary", 98.87, "Greeting", "Hello,Jose");
@@ -28,7 +28,7 @@ int main(){
     Teach2.writeToJsonFile(db_path,Teach2.name);
     Chito.writeToJsonFile(db_path,Chito.name);
     MakoChito.writeToJsonFile(db_path,MakoChito.name);
-    data_process.readExcelToNodes("Project-Management-Sample-Data..xlsx",db_path);
+    //data_process.readExcelToNodes("Project-Management-Sample-Data..xlsx",db_path);
 
     std::unordered_map<std::string, User*> users;
 

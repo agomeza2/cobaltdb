@@ -1,6 +1,6 @@
 #include "../Main_comp/relation.cpp"
 #include "xlnt/xlnt.hpp"
-
+/*
 class DataProcess {
 private:
     Node node_array[1000000];  // Array to hold up to 1 million nodes
@@ -45,4 +45,4 @@ public:
         std::cout << std::endl;
     }
     }
-};
+};*/
