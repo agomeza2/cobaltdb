@@ -30,7 +30,7 @@ public:
         initializeProperties(std::forward<Rest>(rest)...);
     }
 
-    void printElement(const std::any& element) {
+    void printElement  (const std::any& element) {
     if (element.type() == typeid(std::string)) {
         std::cout << std::any_cast<std::string>(element);
     }else if (element.type() == typeid(const char*)){

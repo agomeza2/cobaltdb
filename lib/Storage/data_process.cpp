@@ -1,48 +1,64 @@
+#ifndef DATAPROCESSOR_H
+#define DATAPROCESSOR_H
+#include <string>
+#include <vector>
 #include "../Main_comp/relation.cpp"
 #include "xlnt/xlnt.hpp"
-/*
-class DataProcess {
-private:
-    Node node_array[1000000];  // Array to hold up to 1 million nodes
-    int node_count;            // Count of nodes created
-
+class DataProcessor {
 public:
-    DataProcess() : node_count(0) {}
+    std::vector<Node> nodes;
+    DataProcessor() {
+    }
 
-    // Function to read Excel file and create nodes
-    void readExcelToNodes(const std::string& filePath, const std::string& db_path) {
+    // Method to get the vector of Nodes
+    const std::vector<Node>& getNodes() {
+        return nodes;
+    }
+
+    // Method to display all Nodes
+    void showNodes() {
+        for (auto node : nodes) {
+            node.show(); // Assuming Node has a show method
+        }
+    }
+    void processDataExcel(std::string filePath) {
         xlnt::workbook wb;
-    wb.load("path_to_your_excel_file.xlsx");  // Replace with the actual path
+        wb.load(filePath);
 
-    // Select the active worksheet
-    xlnt::worksheet ws = wb.active_sheet();
+        auto ws = wb.active_sheet();
+        std::vector<std::string> headers;
 
-    // Step 1: Get headers from the first row (row 1)
-    std::vector<std::string> headers;
-    for (auto cell : ws[1]) {  // First row is the header row
-        headers.push_back(cell.to_string());
-    }
+        bool firstRow = true;
 
-    // Display the headers
-    std::cout << "Headers: ";
-    for (const auto &header : headers) {
-        std::cout << header << " ";
-    }
-    std::cout << std::endl;
+        for (auto row : ws.rows(false)) {
+            std::vector<std::string> rowData;
+            for (auto cell : row) {
+                rowData.push_back(cell.to_string());
+            }
 
-    // Step 2: Iterate over the rows and extract the data
-    for (auto row : ws.rows(false)) {  // Iterate over rows, skipping empty cells
-        std::vector<std::string> row_values;
-        for (auto cell : row) {
-            row_values.push_back(cell.to_string());
+            if (firstRow) {
+                headers = rowData;
+                firstRow = false;
+            } else {
+                if (rowData.size() < headers.size()) {
+                    std::cerr << "Row does not have enough columns: " << rowData.size() << std::endl;
+                    continue;
+                }
+
+                std::string name = rowData[0];
+                std::string category = headers[0];
+                Node node(category, name);
+
+                for (size_t i = 1; i < rowData.size(); ++i) {
+                    node.add(headers[i], rowData[i]);
+                }
+
+                nodes.push_back(node);
+            }
         }
+    }
 
-        // Display the row data
-        std::cout << "Row: ";
-        for (const auto &value : row_values) {
-            std::cout << value << " ";
-        }
-        std::cout << std::endl;
-    }
-    }
-};*/
+     
+};
+
+#endif // DATAPROCESSOR_H
