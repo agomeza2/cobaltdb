@@ -1,0 +1,9 @@
+{
+    "ID": 5,
+    "category": "people",
+    "name": "Fagua",
+    "properties": {
+        "age": 20,
+        "salary": 550.67
+    }
+}

@@ -11,6 +11,7 @@ int main(){
     Node Jose("people","Jose", "age",19, "salary", 98.87, "Greeting", "Hello,Jose");
     Node Makoto("people","Makoto", "age", 77, "salary", 88.87, "Greeting", "Hello,Makoto");
     Node Chito("animal","Chito","age",17,"spicies","feline","animal type","cat");
+    Node Fagua("people","Fagua","age",20,"salary",550.67,"Greeting","Hello Fagua"); 
     Relation Teach(Joe,Mia,"Teach","Tutoria","time",12,"classroom",202);
     Relation Teach2(Joe,Mia,"Teach","Tutoria2","time",13,"classroom",205);
     Relation MakoChito(Makoto,Chito,"Owner","only owner","time",17,"place","yokohama");
@@ -28,8 +29,9 @@ int main(){
     Teach2.writeToJsonFile(db_path,Teach2.name);
     Chito.writeToJsonFile(db_path,Chito.name);
     MakoChito.writeToJsonFile(db_path,MakoChito.name);
-    data_process.processDataExcel("Project-Management-Sample-Data.xlsx");
-    data_process.showNodes();
+    Fagua.writeToJsonFile(db_path,Fagua.name);
+    //data_process.processDataExcel("Project-Management-Sample-Data.xlsx");
+    //data_process.showNodes();
 
     std::unordered_map<std::string, User*> users;
 

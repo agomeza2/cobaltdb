@@ -1,0 +1,45 @@
+{
+   "nodes": [
+    {
+        "ID": 3,
+        "category": "people",
+        "name": "Makoto",
+        "properties": {
+            "age": 77,
+            "salary": 88.87
+        }
+    },
+    {
+        "ID": 1,
+        "category": "people",
+        "name": "Mia",
+        "properties": {
+            "age": 22,
+            "salary": 398.87
+        }
+    },
+    {
+        "ID": 4,
+        "category": "animal",
+        "name": "Chito",
+        "properties": {
+            "age": 17
+        }
+    }
+    ],
+  
+    "links": [
+        {
+            "source": "Makoto",
+            "Origin ID": 3,
+            "Relation ID": 2,
+            "category": "Owner",
+            "target": "Chito",
+            "destination ID": 4,
+            "name": "only owner",
+            "properties": {
+                "time": 17
+            }
+        }
+          ]
+  }
