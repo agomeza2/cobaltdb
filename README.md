@@ -1,7 +1,7 @@
 # cobaltdb
 For compiling with cmake and vcpkg for modules
 cd build 
-cmake -DVCPKG_ROOT=<path to vcpkg> -S .. -B .
+cmake -DVCPKG_ROOT="path to vcpkg" -S .. -B .
 cmake --build . 
 opensource serverless graphic database manager.  
 
