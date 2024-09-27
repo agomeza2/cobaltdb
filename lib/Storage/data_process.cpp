@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include "../Main_comp/relation.cpp"
-#include "xlnt/xlnt.hpp"
+#include <xlnt/xlnt.hpp>
 class DataProcessor {
 public:
     std::vector<Node> nodes;
@@ -22,6 +22,8 @@ public:
         }
     }
     void processDataExcel(std::string filePath) {
+        std::cout<<"workbook"<<std::endl;
+        std::cout<<filePath<<std::endl;
         xlnt::workbook wb;
         wb.load(filePath);
 
@@ -56,6 +58,7 @@ public:
                 nodes.push_back(node);
             }
         }
+        std::cout<<"finish workbook"; 
     }
 
      

@@ -28,7 +28,8 @@ int main(){
     Teach2.writeToJsonFile(db_path,Teach2.name);
     Chito.writeToJsonFile(db_path,Chito.name);
     MakoChito.writeToJsonFile(db_path,MakoChito.name);
-    data_process.processDataExcel("Project-Management-Sample-Data.xlsx");
+    std::string filePath = std::string(IMPORT_DIR) + "/Project-Management-Sample-Data.xlsx";
+    data_process.processDataExcel(filePath);
     data_process.showNodes();
 
     std::unordered_map<std::string, User*> users;
