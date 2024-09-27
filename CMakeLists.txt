@@ -1,8 +1,13 @@
 cmake_minimum_required(VERSION 3.12)
 project(MyExcelProject)
 
-# Set the path to vcpkg
-set(VCPKG_ROOT "C:/Users/Alex/vcpkg")
+# Option to specify the vcpkg directory
+set(VCPKG_ROOT "" CACHE PATH "Path to the vcpkg directory")
+if(NOT VCPKG_ROOT)
+    message(FATAL_ERROR "Please specify the VCPKG_ROOT path using -DVCPKG_ROOT=<path> during configuration.")
+endif()
+
+# Set the CMake toolchain file
 set(CMAKE_TOOLCHAIN_FILE "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
 
 # Find the xlnt package
@@ -24,4 +29,3 @@ target_link_libraries(cobalt PRIVATE xlnt::xlnt)
 
 # Set a definition to use in the source code
 target_compile_definitions(cobalt PRIVATE IMPORT_DIR="${IMPORT_DIR}")
-

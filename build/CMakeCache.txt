@@ -216,6 +216,9 @@ VCPKG_MANIFEST_MODE:BOOL=OFF
 // found after toolchain/system libraries/packages.
 VCPKG_PREFER_SYSTEM_LIBS:BOOL=OFF
 
+//Path to the vcpkg directory
+VCPKG_ROOT:PATH=C:/Users/Alex/vcpkg
+
 //Enable the setup of CMAKE_PROGRAM_PATH to vcpkg paths
 VCPKG_SETUP_CMAKE_PROGRAM_PATH:BOOL=ON
 
