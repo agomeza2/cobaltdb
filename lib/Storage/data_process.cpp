@@ -25,7 +25,16 @@ public:
         std::cout<<"workbook"<<std::endl;
         std::cout<<filePath<<std::endl;
         xlnt::workbook wb;
+        try {  
         wb.load(filePath);
+        } catch (const std::exception& e) {
+        std::cerr << "Error loading file: " << e.what() << std::endl;
+        throw; 
+        } catch (...) {
+        std::cerr << "Unknown error occurred while loading the file." << std::endl;
+        throw; 
+        }
+
 
         auto ws = wb.active_sheet();
         std::vector<std::string> headers;
