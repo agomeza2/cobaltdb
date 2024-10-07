@@ -1,0 +1,9 @@
+{
+    "ID": 1,
+    "category": "people",
+    "name": "Mia",
+    "properties": {
+        "age": 22,
+        "salary": 398.87
+    }
+}

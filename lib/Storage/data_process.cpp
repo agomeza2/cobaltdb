@@ -3,10 +3,12 @@
 #include <string>
 #include <vector>
 #include "../Main_comp/relation.cpp"
-#include <xlnt/xlnt.hpp>
+#include <xlsxio_read.h>  // Include xlsxio for reading Excel files
+
 class DataProcessor {
 public:
     std::vector<Node> nodes;
+
     DataProcessor() {
     }
 
@@ -17,29 +19,41 @@ public:
 
     // Method to display all Nodes
     void showNodes() {
-        for (auto node : nodes) {
+        for (auto& node : nodes) {
             node.show(); // Assuming Node has a show method
         }
     }
+
+    // Method to process data from Excel using xlsxio
     void processDataExcel(std::string filePath) {
-        std::cout<<"workbook"<<std::endl;
-        std::cout<<filePath<<std::endl;
-        xlnt::workbook wb;
-        wb.load(filePath);
+        std::cout << "Processing workbook: " << filePath << std::endl;
 
-        auto ws = wb.active_sheet();
+        xlsxioreader xlsxioread;
+        if ((xlsxioread = xlsxioread_open(filePath.c_str())) == NULL) {
+            std::cerr << "Error opening .xlsx file." << std::endl;
+            return;
+        }
+
+        xlsxioreadersheet sheet;
+        if ((sheet = xlsxioread_sheet_open(xlsxioread, NULL, XLSXIOREAD_SKIP_EMPTY_ROWS)) == NULL) {
+            std::cerr << "Error opening sheet in .xlsx file." << std::endl;
+            xlsxioread_close(xlsxioread);
+            return;
+        }
+
         std::vector<std::string> headers;
-
+        char* value;
         bool firstRow = true;
 
-        for (auto row : ws.rows(false)) {
+        while (xlsxioread_sheet_next_row(sheet)) {
             std::vector<std::string> rowData;
-            for (auto cell : row) {
-                rowData.push_back(cell.to_string());
+            while ((value = xlsxioread_sheet_next_cell(sheet)) != NULL) {
+                rowData.push_back(value);
+                free(value);  // Free memory after reading the cell
             }
 
             if (firstRow) {
-                headers = rowData;
+                headers = rowData;  // Capture the headers
                 firstRow = false;
             } else {
                 if (rowData.size() < headers.size()) {
@@ -52,16 +66,18 @@ public:
                 Node node(category, name);
 
                 for (size_t i = 1; i < rowData.size(); ++i) {
-                    node.add(headers[i], rowData[i]);
+                    node.add(headers[i], rowData[i]);  // Add each cell value to the node
                 }
 
-                nodes.push_back(node);
+                nodes.push_back(node);  // Add the node to the list of nodes
             }
         }
-        std::cout<<"finish workbook"; 
-    }
 
-     
+        xlsxioread_sheet_close(sheet);
+        xlsxioread_close(xlsxioread);
+
+        std::cout << "Finished processing workbook." << std::endl;
+    }
 };
 
 #endif // DATAPROCESSOR_H

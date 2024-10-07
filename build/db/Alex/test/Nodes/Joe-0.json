@@ -1,9 +1,0 @@
-{
-    "ID": 0,
-    "category": "people",
-    "name": "Joe",
-    "properties": {
-        "age": 42,
-        "salary": 346.87
-    }
-}

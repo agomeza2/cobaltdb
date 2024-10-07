@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/cobalt.dir/src/main.cpp.o -o cobalt  /usr/lib/libz.so /home/tensem/vcpkg/installed/x64-linux/debug/lib/libminiz.a
