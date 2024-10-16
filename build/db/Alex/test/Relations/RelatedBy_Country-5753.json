@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5753,
+    "category": "CommonAttribute",
+    "destination ID": 74,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "UK"
+    },
+    "source": "Dakota",
+    "source ID": 26,
+    "target": "Morgan"
+}

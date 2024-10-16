@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3283,
+    "category": "CommonAttribute",
+    "destination ID": 76,
+    "name": "RelatedBy_Age",
+    "properties": {
+        "Age": "63"
+    },
+    "source": "Quinn",
+    "source ID": 16,
+    "target": "Sydney"
+}

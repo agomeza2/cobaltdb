@@ -1,0 +1,12 @@
+{
+    "Relation ID": 13985,
+    "category": "CommonAttribute",
+    "destination ID": 91,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "UK"
+    },
+    "source": "Riley",
+    "source ID": 80,
+    "target": "Cameron"
+}

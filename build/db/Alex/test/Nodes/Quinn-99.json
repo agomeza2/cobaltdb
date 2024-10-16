@@ -1,0 +1,10 @@
+{
+    "ID": 99,
+    "category": "Name",
+    "name": "Quinn",
+    "properties": {
+        "Age": "50",
+        "Country": "Canada",
+        "Salary": "66627"
+    }
+}

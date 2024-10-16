@@ -1,0 +1,12 @@
+{
+    "Relation ID": 10109,
+    "category": "CommonAttribute",
+    "destination ID": 63,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "Canada"
+    },
+    "source": "Quinn",
+    "source ID": 48,
+    "target": "Morgan"
+}

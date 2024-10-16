@@ -28,7 +28,7 @@ int main(){
     Teach2.writeToJsonFile(db_path,Teach2.name);
     Chito.writeToJsonFile(db_path,Chito.name);
     MakoChito.writeToJsonFile(db_path,MakoChito.name);
-    std::string filePath = std::string(IMPORT_DIR) + "/Project-Management-Sample-Data.xlsx";
+    std::string filePath = std::string(IMPORT_DIR) + "/salary_country.xlsx";
     data_process.processDataToNodeExcel(filePath);
     data_process.showNodes();
     data_process.saveNodes(db_path);

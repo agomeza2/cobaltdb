@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3998,
+    "category": "CommonAttribute",
+    "destination ID": 56,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "USA"
+    },
+    "source": "Jordan",
+    "source ID": 19,
+    "target": "Morgan"
+}

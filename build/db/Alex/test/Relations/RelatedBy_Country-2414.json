@@ -1,0 +1,12 @@
+{
+    "Relation ID": 2414,
+    "category": "CommonAttribute",
+    "destination ID": 53,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "India"
+    },
+    "source": "Dakota",
+    "source ID": 13,
+    "target": "Riley"
+}

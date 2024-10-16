@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3632,
+    "category": "CommonAttribute",
+    "destination ID": 19,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "India"
+    },
+    "source": "Taylor",
+    "source ID": 18,
+    "target": "Jordan"
+}

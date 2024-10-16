@@ -1,0 +1,12 @@
+{
+    "Relation ID": 11306,
+    "category": "CommonAttribute",
+    "destination ID": 98,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "USA"
+    },
+    "source": "Riley",
+    "source ID": 55,
+    "target": "Quinn"
+}

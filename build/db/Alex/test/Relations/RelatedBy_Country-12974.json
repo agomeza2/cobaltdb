@@ -1,0 +1,12 @@
+{
+    "Relation ID": 12974,
+    "category": "CommonAttribute",
+    "destination ID": 73,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "Germany"
+    },
+    "source": "Quinn",
+    "source ID": 69,
+    "target": "Sydney"
+}

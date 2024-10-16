@@ -1,0 +1,10 @@
+{
+    "ID": 51,
+    "category": "Name",
+    "name": "Cameron",
+    "properties": {
+        "Age": "42",
+        "Country": "India",
+        "Salary": "39005"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "Relation ID": 14327,
+    "category": "CommonAttribute",
+    "destination ID": 100,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "Brazil"
+    },
+    "source": "Dakota",
+    "source ID": 85,
+    "target": "Morgan"
+}

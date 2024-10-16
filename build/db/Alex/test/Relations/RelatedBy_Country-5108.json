@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5108,
+    "category": "CommonAttribute",
+    "destination ID": 96,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "Brazil"
+    },
+    "source": "Sydney",
+    "source ID": 23,
+    "target": "Morgan"
+}

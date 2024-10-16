@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5798,
+    "category": "CommonAttribute",
+    "destination ID": 89,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "UK"
+    },
+    "source": "Dakota",
+    "source ID": 26,
+    "target": "Casey"
+}

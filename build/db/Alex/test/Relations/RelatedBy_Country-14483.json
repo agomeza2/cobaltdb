@@ -1,0 +1,12 @@
+{
+    "Relation ID": 14483,
+    "category": "CommonAttribute",
+    "destination ID": 101,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "Australia"
+    },
+    "source": "Alex",
+    "source ID": 88,
+    "target": "Dakota"
+}

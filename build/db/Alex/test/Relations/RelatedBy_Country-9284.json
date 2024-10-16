@@ -1,0 +1,12 @@
+{
+    "Relation ID": 9284,
+    "category": "CommonAttribute",
+    "destination ID": 78,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "Japan"
+    },
+    "source": "Dakota",
+    "source ID": 43,
+    "target": "Sydney"
+}

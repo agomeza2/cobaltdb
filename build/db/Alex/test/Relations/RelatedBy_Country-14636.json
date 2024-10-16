@@ -1,0 +1,12 @@
+{
+    "Relation ID": 14636,
+    "category": "CommonAttribute",
+    "destination ID": 98,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "USA"
+    },
+    "source": "Jordan",
+    "source ID": 92,
+    "target": "Quinn"
+}

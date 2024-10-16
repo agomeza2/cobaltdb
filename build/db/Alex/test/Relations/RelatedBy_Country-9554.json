@@ -1,0 +1,12 @@
+{
+    "Relation ID": 9554,
+    "category": "CommonAttribute",
+    "destination ID": 49,
+    "name": "RelatedBy_Country",
+    "properties": {
+        "Country": "Japan"
+    },
+    "source": "Quinn",
+    "source ID": 45,
+    "target": "Dakota"
+}
