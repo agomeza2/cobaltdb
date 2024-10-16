@@ -1,0 +1,12 @@
+{
+    "Relation ID": 2197,
+    "category": "CommonAttribute",
+    "destination ID": 47,
+    "name": "RelatedBy_Start Date",
+    "properties": {
+        "Start Date": "45346"
+    },
+    "source": "Customer Svc",
+    "source ID": 13,
+    "target": "Logistics"
+}

@@ -1,0 +1,12 @@
+{
+    "Relation ID": 4973,
+    "category": "CommonAttribute",
+    "destination ID": 34,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Zoe"
+    },
+    "source": "Support",
+    "source ID": 30,
+    "target": "Operations"
+}

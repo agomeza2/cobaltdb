@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3544,
+    "category": "CommonAttribute",
+    "destination ID": 41,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Research Paper Writing"
+    },
+    "source": "Research",
+    "source ID": 20,
+    "target": "Training"
+}

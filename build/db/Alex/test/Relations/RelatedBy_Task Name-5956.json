@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5956,
+    "category": "CommonAttribute",
+    "destination ID": 44,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Skill Development"
+    },
+    "source": "Training",
+    "source ID": 41,
+    "target": "Events"
+}

@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5758,
+    "category": "CommonAttribute",
+    "destination ID": 41,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Client Advisory"
+    },
+    "source": "Consulting",
+    "source ID": 38,
+    "target": "Training"
+}

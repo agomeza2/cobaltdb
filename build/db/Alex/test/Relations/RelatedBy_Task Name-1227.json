@@ -1,0 +1,12 @@
+{
+    "Relation ID": 1227,
+    "category": "CommonAttribute",
+    "destination ID": 40,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Prototype Development"
+    },
+    "source": "Product Dev",
+    "source ID": 9,
+    "target": "Training"
+}

@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3414,
+    "category": "CommonAttribute",
+    "destination ID": 49,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Olivia"
+    },
+    "source": "Research",
+    "source ID": 19,
+    "target": "Engineering"
+}

@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3404,
+    "category": "CommonAttribute",
+    "destination ID": 47,
+    "name": "RelatedBy_Progress",
+    "properties": {
+        "Progress": "0"
+    },
+    "source": "Research",
+    "source ID": 19,
+    "target": "Logistics"
+}

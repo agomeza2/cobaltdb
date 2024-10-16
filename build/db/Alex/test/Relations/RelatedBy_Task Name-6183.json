@@ -1,0 +1,12 @@
+{
+    "Relation ID": 6183,
+    "category": "CommonAttribute",
+    "destination ID": 49,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Inventory Optimization"
+    },
+    "source": "Logistics",
+    "source ID": 47,
+    "target": "Engineering"
+}

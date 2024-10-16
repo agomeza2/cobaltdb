@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3702,
+    "category": "CommonAttribute",
+    "destination ID": 38,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Quinn"
+    },
+    "source": "Development",
+    "source ID": 21,
+    "target": "Consulting"
+}

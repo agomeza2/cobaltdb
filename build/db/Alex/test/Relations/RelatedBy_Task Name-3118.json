@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3118,
+    "category": "CommonAttribute",
+    "destination ID": 31,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Market Trends Analysis"
+    },
+    "source": "Research",
+    "source ID": 18,
+    "target": "Support"
+}

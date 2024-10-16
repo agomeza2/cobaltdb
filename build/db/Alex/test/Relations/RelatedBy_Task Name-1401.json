@@ -1,0 +1,12 @@
+{
+    "Relation ID": 1401,
+    "category": "CommonAttribute",
+    "destination ID": 29,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Quality Assurance"
+    },
+    "source": "Product Dev",
+    "source ID": 10,
+    "target": "Sales"
+}

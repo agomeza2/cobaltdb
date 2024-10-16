@@ -1,0 +1,12 @@
+{
+    "Relation ID": 402,
+    "category": "CommonAttribute",
+    "destination ID": 28,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Bob"
+    },
+    "source": "Marketing",
+    "source ID": 6,
+    "target": "Sales"
+}

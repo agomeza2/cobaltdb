@@ -1,0 +1,12 @@
+{
+    "Relation ID": 1152,
+    "category": "CommonAttribute",
+    "destination ID": 27,
+    "name": "RelatedBy_End Date",
+    "properties": {
+        "End Date": "45311"
+    },
+    "source": "Product Dev",
+    "source ID": 9,
+    "target": "Sales"
+}

@@ -1,0 +1,12 @@
+{
+    "Relation ID": 6102,
+    "category": "CommonAttribute",
+    "destination ID": 47,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "n Nancy"
+    },
+    "source": "Events",
+    "source ID": 44,
+    "target": "Logistics"
+}

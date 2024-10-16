@@ -1,0 +1,12 @@
+{
+    "Relation ID": 2668,
+    "category": "CommonAttribute",
+    "destination ID": 21,
+    "name": "RelatedBy_Days Required",
+    "properties": {
+        "Days Required": "21"
+    },
+    "source": "Financial",
+    "source ID": 16,
+    "target": "Development"
+}

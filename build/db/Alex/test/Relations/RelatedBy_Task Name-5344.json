@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5344,
+    "category": "CommonAttribute",
+    "destination ID": 42,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Process Optimization"
+    },
+    "source": "Operations",
+    "source ID": 33,
+    "target": "Events"
+}

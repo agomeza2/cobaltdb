@@ -1,0 +1,12 @@
+{
+    "Relation ID": 388,
+    "category": "CommonAttribute",
+    "destination ID": 26,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Content Creation"
+    },
+    "source": "Marketing",
+    "source ID": 6,
+    "target": "Production"
+}

@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5352,
+    "category": "CommonAttribute",
+    "destination ID": 43,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Calvin"
+    },
+    "source": "Operations",
+    "source ID": 33,
+    "target": "Events"
+}

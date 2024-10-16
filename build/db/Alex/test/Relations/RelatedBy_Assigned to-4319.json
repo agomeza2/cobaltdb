@@ -1,0 +1,12 @@
+{
+    "Relation ID": 4319,
+    "category": "CommonAttribute",
+    "destination ID": 35,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Ursula"
+    },
+    "source": "Production",
+    "source ID": 25,
+    "target": "Operations"
+}

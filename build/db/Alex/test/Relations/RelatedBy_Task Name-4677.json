@@ -1,0 +1,12 @@
+{
+    "Relation ID": 4677,
+    "category": "CommonAttribute",
+    "destination ID": 48,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Lead Generation"
+    },
+    "source": "Sales",
+    "source ID": 27,
+    "target": "Engineering"
+}

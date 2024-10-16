@@ -1,0 +1,12 @@
+{
+    "Relation ID": 4553,
+    "category": "CommonAttribute",
+    "destination ID": 50,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Victor"
+    },
+    "source": "Production",
+    "source ID": 26,
+    "target": "Engineering"
+}

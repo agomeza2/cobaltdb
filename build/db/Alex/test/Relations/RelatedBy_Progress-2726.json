@@ -1,0 +1,12 @@
+{
+    "Relation ID": 2726,
+    "category": "CommonAttribute",
+    "destination ID": 30,
+    "name": "RelatedBy_Progress",
+    "properties": {
+        "Progress": "0.78"
+    },
+    "source": "Financial",
+    "source ID": 16,
+    "target": "Support"
+}

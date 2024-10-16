@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3334,
+    "category": "CommonAttribute",
+    "destination ID": 36,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Data Collection"
+    },
+    "source": "Research",
+    "source ID": 19,
+    "target": "Consulting"
+}

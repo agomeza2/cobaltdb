@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5656,
+    "category": "CommonAttribute",
+    "destination ID": 49,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Strategic Planning"
+    },
+    "source": "Consulting",
+    "source ID": 36,
+    "target": "Engineering"
+}

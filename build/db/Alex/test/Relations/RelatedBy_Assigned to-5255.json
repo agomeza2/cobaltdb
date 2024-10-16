@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5255,
+    "category": "CommonAttribute",
+    "destination ID": 44,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Bella"
+    },
+    "source": "Support",
+    "source ID": 32,
+    "target": "Events"
+}

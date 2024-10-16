@@ -1,0 +1,12 @@
+{
+    "Relation ID": 729,
+    "category": "CommonAttribute",
+    "destination ID": 40,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Social Media Planning"
+    },
+    "source": "Marketing",
+    "source ID": 7,
+    "target": "Training"
+}

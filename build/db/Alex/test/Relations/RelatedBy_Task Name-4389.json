@@ -1,0 +1,12 @@
+{
+    "Relation ID": 4389,
+    "category": "CommonAttribute",
+    "destination ID": 47,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Quality Control"
+    },
+    "source": "Production",
+    "source ID": 25,
+    "target": "Logistics"
+}

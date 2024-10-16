@@ -1,0 +1,12 @@
+{
+    "Relation ID": 2943,
+    "category": "CommonAttribute",
+    "destination ID": 34,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Investment Planning"
+    },
+    "source": "Financial",
+    "source ID": 17,
+    "target": "Operations"
+}

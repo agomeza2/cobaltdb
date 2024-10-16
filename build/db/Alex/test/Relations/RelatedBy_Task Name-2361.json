@@ -1,0 +1,12 @@
+{
+    "Relation ID": 2361,
+    "category": "CommonAttribute",
+    "destination ID": 39,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Customer Feedback"
+    },
+    "source": "Customer Svc",
+    "source ID": 14,
+    "target": "Training"
+}

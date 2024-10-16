@@ -1,0 +1,12 @@
+{
+    "Relation ID": 1732,
+    "category": "CommonAttribute",
+    "destination ID": 45,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "User Interface Design"
+    },
+    "source": "Product Dev",
+    "source ID": 11,
+    "target": "Logistics"
+}

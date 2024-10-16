@@ -1,0 +1,12 @@
+{
+    "Relation ID": 2439,
+    "category": "CommonAttribute",
+    "destination ID": 17,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Budget Analysis"
+    },
+    "source": "Financial",
+    "source ID": 15,
+    "target": "Financial"
+}

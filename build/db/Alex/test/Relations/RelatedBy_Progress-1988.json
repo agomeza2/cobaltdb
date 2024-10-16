@@ -1,0 +1,12 @@
+{
+    "Relation ID": 1988,
+    "category": "CommonAttribute",
+    "destination ID": 49,
+    "name": "RelatedBy_Progress",
+    "properties": {
+        "Progress": "1"
+    },
+    "source": "Customer Svc",
+    "source ID": 12,
+    "target": "Engineering"
+}

@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3342,
+    "category": "CommonAttribute",
+    "destination ID": 37,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Olivia"
+    },
+    "source": "Research",
+    "source ID": 19,
+    "target": "Consulting"
+}

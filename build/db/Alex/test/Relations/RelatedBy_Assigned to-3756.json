@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3756,
+    "category": "CommonAttribute",
+    "destination ID": 47,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Quinn"
+    },
+    "source": "Development",
+    "source ID": 21,
+    "target": "Logistics"
+}

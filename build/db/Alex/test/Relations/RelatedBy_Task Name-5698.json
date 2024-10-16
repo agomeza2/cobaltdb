@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5698,
+    "category": "CommonAttribute",
+    "destination ID": 43,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Market Expansion"
+    },
+    "source": "Consulting",
+    "source ID": 37,
+    "target": "Events"
+}

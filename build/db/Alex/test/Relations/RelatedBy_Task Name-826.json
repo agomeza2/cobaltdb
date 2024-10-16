@@ -1,0 +1,12 @@
+{
+    "Relation ID": 826,
+    "category": "CommonAttribute",
+    "destination ID": 14,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Campaign Analysis"
+    },
+    "source": "Marketing",
+    "source ID": 8,
+    "target": "Customer Svc"
+}

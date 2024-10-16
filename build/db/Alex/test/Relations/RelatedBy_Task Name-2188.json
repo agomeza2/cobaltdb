@@ -1,0 +1,12 @@
+{
+    "Relation ID": 2188,
+    "category": "CommonAttribute",
+    "destination ID": 46,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Ticket Resolution"
+    },
+    "source": "Customer Svc",
+    "source ID": 13,
+    "target": "Logistics"
+}

@@ -1,0 +1,12 @@
+{
+    "Relation ID": 4971,
+    "category": "CommonAttribute",
+    "destination ID": 34,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Technical Support"
+    },
+    "source": "Support",
+    "source ID": 30,
+    "target": "Operations"
+}

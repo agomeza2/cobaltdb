@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5820,
+    "category": "CommonAttribute",
+    "destination ID": 40,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Isaac"
+    },
+    "source": "Training",
+    "source ID": 39,
+    "target": "Training"
+}

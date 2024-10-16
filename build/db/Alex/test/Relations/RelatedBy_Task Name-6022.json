@@ -1,0 +1,12 @@
+{
+    "Relation ID": 6022,
+    "category": "CommonAttribute",
+    "destination ID": 47,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Event Planning"
+    },
+    "source": "Events",
+    "source ID": 42,
+    "target": "Logistics"
+}

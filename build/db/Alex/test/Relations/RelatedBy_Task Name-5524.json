@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5524,
+    "category": "CommonAttribute",
+    "destination ID": 41,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Facility Maintenance"
+    },
+    "source": "Operations",
+    "source ID": 35,
+    "target": "Training"
+}

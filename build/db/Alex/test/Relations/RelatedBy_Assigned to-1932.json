@@ -1,0 +1,12 @@
+{
+    "Relation ID": 1932,
+    "category": "CommonAttribute",
+    "destination ID": 40,
+    "name": "RelatedBy_Assigned to",
+    "properties": {
+        "Assigned to": "Hannah"
+    },
+    "source": "Customer Svc",
+    "source ID": 12,
+    "target": "Training"
+}

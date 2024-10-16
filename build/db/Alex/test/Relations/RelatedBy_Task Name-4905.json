@@ -1,0 +1,12 @@
+{
+    "Relation ID": 4905,
+    "category": "CommonAttribute",
+    "destination ID": 43,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Contract Negotiation"
+    },
+    "source": "Sales",
+    "source ID": 29,
+    "target": "Events"
+}

@@ -1,0 +1,12 @@
+{
+    "Relation ID": 2769,
+    "category": "CommonAttribute",
+    "destination ID": 38,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Financial Reporting"
+    },
+    "source": "Financial",
+    "source ID": 16,
+    "target": "Consulting"
+}

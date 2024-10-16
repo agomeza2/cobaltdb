@@ -1,0 +1,12 @@
+{
+    "Relation ID": 39,
+    "category": "CommonAttribute",
+    "destination ID": 12,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Market Research"
+    },
+    "source": "Marketing",
+    "source ID": 5,
+    "target": "Customer Svc"
+}

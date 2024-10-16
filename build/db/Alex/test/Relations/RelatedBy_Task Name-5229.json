@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5229,
+    "category": "CommonAttribute",
+    "destination ID": 40,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Software Updates"
+    },
+    "source": "Support",
+    "source ID": 32,
+    "target": "Training"
+}

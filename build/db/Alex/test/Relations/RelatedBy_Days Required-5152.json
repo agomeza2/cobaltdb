@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5152,
+    "category": "CommonAttribute",
+    "destination ID": 45,
+    "name": "RelatedBy_Days Required",
+    "properties": {
+        "Days Required": "31"
+    },
+    "source": "Support",
+    "source ID": 31,
+    "target": "Logistics"
+}

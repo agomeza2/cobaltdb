@@ -1,0 +1,12 @@
+{
+    "Relation ID": 1960,
+    "category": "CommonAttribute",
+    "destination ID": 45,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Service Improvement"
+    },
+    "source": "Customer Svc",
+    "source ID": 12,
+    "target": "Logistics"
+}

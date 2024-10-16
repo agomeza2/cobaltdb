@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5957,
+    "category": "CommonAttribute",
+    "destination ID": 44,
+    "name": "RelatedBy_End Date",
+    "properties": {
+        "End Date": "45372"
+    },
+    "source": "Training",
+    "source ID": 41,
+    "target": "Events"
+}

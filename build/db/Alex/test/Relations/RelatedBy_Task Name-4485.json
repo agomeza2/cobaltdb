@@ -1,0 +1,12 @@
+{
+    "Relation ID": 4485,
+    "category": "CommonAttribute",
+    "destination ID": 39,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Packaging Design"
+    },
+    "source": "Production",
+    "source ID": 26,
+    "target": "Training"
+}

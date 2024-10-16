@@ -7,6 +7,7 @@
 class DataProcessor {
 public:
     std::vector<Node> nodes;
+    std::vector<Relation> relations;
     DataProcessor() {
     }
 
@@ -21,7 +22,17 @@ public:
             node.show(); // Assuming Node has a show method
         }
     }
-    void processDataExcel(std::string filePath) {
+    void saveNodes(const std::string& db_path){
+        for (int i=0; i<nodes.size(); i++){
+            nodes[i].writeToJsonFile(db_path,nodes[i].name);
+        }
+    } 
+    void saveRelations(const std::string& db_path){
+        for (int i=0; i<relations.size(); i++){
+            relations[i].writeToJsonFile(db_path,relations[i].name);
+        }
+    } 
+    void processDataToNodeExcel(std::string filePath) {
         std::cout<<"workbook"<<std::endl;
         std::cout<<filePath<<std::endl;
         std::cout<<"Hello mom"; 
@@ -68,8 +79,30 @@ public:
                 nodes.push_back(node);
             }
         }
-        std::cout<<"finish workbook"; 
     }
+    void processDataToRelationExcel() {
+    // Compare each node with every other node
+    for (size_t i = 0; i < nodes.size(); ++i) {
+        for (size_t j = i + 1; j < nodes.size(); ++j) {
+            const Node& node1 = nodes[i];
+            const Node& node2 = nodes[j];
+
+            // Find common attributes between the two nodes
+            for (const auto& [key, value] : node1.properties) {
+                if (node2.properties.count(key) > 0) {
+                    // Create a relation for the common attribute
+                    Relation relation(
+                        node1, node2, 
+                        "CommonAttribute",   // Category for this relation
+                        "RelatedBy_" + key,  // Relation name derived from the attribute key
+                        key, value           // Store the attribute as a property in the relation
+                    );
+                    relations.push_back(relation);
+                }
+            }
+        }
+    }
+}
 
      
 };

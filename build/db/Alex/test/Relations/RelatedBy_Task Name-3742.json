@@ -1,0 +1,12 @@
+{
+    "Relation ID": 3742,
+    "category": "CommonAttribute",
+    "destination ID": 45,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Software Development"
+    },
+    "source": "Development",
+    "source ID": 21,
+    "target": "Logistics"
+}

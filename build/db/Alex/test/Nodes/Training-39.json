@@ -1,0 +1,13 @@
+{
+    "ID": 39,
+    "category": "Project Name",
+    "name": "Training",
+    "properties": {
+        "Assigned to": "Isaac",
+        "Days Required": "27",
+        "End Date": "45322",
+        "Progress": "0.8",
+        "Start Date": "45295",
+        "Task Name": "Employee Training"
+    }
+}

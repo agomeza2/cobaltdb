@@ -1,0 +1,12 @@
+{
+    "Relation ID": 5611,
+    "category": "CommonAttribute",
+    "destination ID": 41,
+    "name": "RelatedBy_Start Date",
+    "properties": {
+        "Start Date": "45293"
+    },
+    "source": "Consulting",
+    "source ID": 36,
+    "target": "Training"
+}

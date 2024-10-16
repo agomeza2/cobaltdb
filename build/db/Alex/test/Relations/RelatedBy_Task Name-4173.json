@@ -1,0 +1,12 @@
+{
+    "Relation ID": 4173,
+    "category": "CommonAttribute",
+    "destination ID": 36,
+    "name": "RelatedBy_Task Name",
+    "properties": {
+        "Task Name": "Manufacturing"
+    },
+    "source": "Production",
+    "source ID": 24,
+    "target": "Consulting"
+}
