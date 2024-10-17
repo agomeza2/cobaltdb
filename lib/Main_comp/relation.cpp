@@ -76,11 +76,11 @@ void alter(const std::string& key, std::any value) {
         json j;
         j["name"] = name;
         j["category"] = category;
-        j["Relation ID"]=id;
+        j["RelationID"]=id;
         j["source"]= origin.name;
-        j["source ID"]=origin.id;
+        j["sourceID"]=origin.id;
         j["target"]= dest.name;
-        j["destination ID"]=dest.id;
+        j["targetID"]=dest.id;
         json props;
         for (const auto& [key, value] : properties) {
             if (value.type() == typeid(std::string)) {
