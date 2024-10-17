@@ -77,10 +77,8 @@ void alter(const std::string& key, std::any value) {
         j["name"] = name;
         j["category"] = category;
         j["RelationID"]=id;
-        j["source"]= origin.name;
-        j["sourceID"]=origin.id;
-        j["target"]= dest.name;
-        j["targetID"]=dest.id;
+        j["source"]= origin.id;
+        j["target"]= dest.id;
         json props;
         for (const auto& [key, value] : properties) {
             if (value.type() == typeid(std::string)) {
