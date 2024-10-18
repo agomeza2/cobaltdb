@@ -1,0 +1,10 @@
+{
+    "RelationID": 67,
+    "category": "RelatedBy_Age",
+    "name": "CommonAttribute_64",
+    "properties": {
+        "Age": "51"
+    },
+    "source": 10,
+    "target": 23
+}

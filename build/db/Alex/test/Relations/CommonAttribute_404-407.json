@@ -1,0 +1,10 @@
+{
+    "RelationID": 407,
+    "category": "RelatedBy_Country",
+    "name": "CommonAttribute_404",
+    "properties": {
+        "Country": "Canada"
+    },
+    "source": 48,
+    "target": 78
+}

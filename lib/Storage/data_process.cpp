@@ -80,24 +80,38 @@ public:
             }
         }
     }
-    void processDataToRelationExcel() {
+   void processDataToRelationExcel() {
+    int count = 0;  // Counter for unique relation names
+
     // Compare each node with every other node
     for (size_t i = 0; i < nodes.size(); ++i) {
         for (size_t j = i + 1; j < nodes.size(); ++j) {
             const Node& node1 = nodes[i];
             const Node& node2 = nodes[j];
 
-            // Find common attributes between the two nodes
-            for (const auto& [key, value] : node1.properties) {
-                if (node2.properties.count(key) > 0) {
-                    // Create a relation for the common attribute
-                    Relation relation(
-                        node1, node2, 
-                        "CommonAttribute",   // Category for this relation
-                        "RelatedBy_" + key,  // Relation name derived from the attribute key
-                        key, value           // Store the attribute as a property in the relation
-                    );
-                    relations.push_back(relation);
+            // Find common key-value pairs between the two nodes
+            for (const auto& [key, value1] : node1.properties) {
+                auto it = node2.properties.find(key);
+                if (it != node2.properties.end()) {
+                    const std::any& value2 = it->second;
+
+                    // Compare the values using std::any_cast
+                    try {
+                        if (std::any_cast<std::string>(value1) == std::any_cast<std::string>(value2)) {
+                            // Create a relation for the matching key-value pair
+                            Relation relation(
+                                node1, node2, 
+                                "RelatedBy_" + key,  // Category for this relation
+                                "CommonAttribute_" + std::to_string(count), // Unique relation name
+                                key, value1          // Store the attribute as a property
+                            );
+                            relations.push_back(relation);  // Add the relation to the list
+                            ++count;  // Increment the counter for the next relation
+                        }
+                    } catch (const std::bad_any_cast& e) {
+                        // Handle the case where the values are not strings
+                        std::cerr << "Type mismatch for key: " << key << "\n";
+                    }
                 }
             }
         }
