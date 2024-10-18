@@ -1,12 +1,10 @@
 {
-    "Relation ID": 7696,
+    "RelationID": 7696,
     "category": "CommonAttribute",
-    "destination ID": 65,
     "name": "RelatedBy_Age",
     "properties": {
         "Age": "59"
     },
-    "source": "Casey",
-    "source ID": 35,
-    "target": "Morgan"
+    "source": 35,
+    "target": 65
 }

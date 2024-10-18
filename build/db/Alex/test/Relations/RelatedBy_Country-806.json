@@ -1,12 +1,10 @@
 {
-    "Relation ID": 806,
+    "RelationID": 806,
     "category": "CommonAttribute",
-    "destination ID": 78,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Canada"
     },
-    "source": "Alex",
-    "source ID": 7,
-    "target": "Sydney"
+    "source": 7,
+    "target": 78
 }

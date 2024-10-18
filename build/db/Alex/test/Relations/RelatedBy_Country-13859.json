@@ -1,12 +1,10 @@
 {
-    "Relation ID": 13859,
+    "RelationID": 13859,
     "category": "CommonAttribute",
-    "destination ID": 98,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Canada"
     },
-    "source": "Sydney",
-    "source ID": 78,
-    "target": "Quinn"
+    "source": 78,
+    "target": 98
 }

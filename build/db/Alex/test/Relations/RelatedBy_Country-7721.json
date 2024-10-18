@@ -1,12 +1,10 @@
 {
-    "Relation ID": 7721,
+    "RelationID": 7721,
     "category": "CommonAttribute",
-    "destination ID": 73,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "India"
     },
-    "source": "Casey",
-    "source ID": 35,
-    "target": "Sydney"
+    "source": 35,
+    "target": 73
 }

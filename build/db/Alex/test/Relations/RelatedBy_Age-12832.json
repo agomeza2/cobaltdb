@@ -1,12 +1,10 @@
 {
-    "Relation ID": 12832,
+    "RelationID": 12832,
     "category": "CommonAttribute",
-    "destination ID": 97,
     "name": "RelatedBy_Age",
     "properties": {
         "Age": "56"
     },
-    "source": "Dakota",
-    "source ID": 67,
-    "target": "Riley"
+    "source": 67,
+    "target": 97
 }

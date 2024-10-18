@@ -1,12 +1,10 @@
 {
-    "Relation ID": 8086,
+    "RelationID": 8086,
     "category": "CommonAttribute",
-    "destination ID": 60,
     "name": "RelatedBy_Age",
     "properties": {
         "Age": "37"
     },
-    "source": "Alex",
-    "source ID": 37,
-    "target": "Dakota"
+    "source": 37,
+    "target": 60
 }

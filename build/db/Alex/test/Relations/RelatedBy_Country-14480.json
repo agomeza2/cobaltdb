@@ -1,12 +1,10 @@
 {
-    "Relation ID": 14480,
+    "RelationID": 14480,
     "category": "CommonAttribute",
-    "destination ID": 100,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Australia"
     },
-    "source": "Alex",
-    "source ID": 88,
-    "target": "Morgan"
+    "source": 88,
+    "target": 100
 }

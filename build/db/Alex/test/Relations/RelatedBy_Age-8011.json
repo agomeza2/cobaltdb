@@ -1,12 +1,10 @@
 {
-    "Relation ID": 8011,
+    "RelationID": 8011,
     "category": "CommonAttribute",
-    "destination ID": 102,
     "name": "RelatedBy_Age",
     "properties": {
         "Age": "34"
     },
-    "source": "Taylor",
-    "source ID": 36,
-    "target": "Jordan"
+    "source": 36,
+    "target": 102
 }

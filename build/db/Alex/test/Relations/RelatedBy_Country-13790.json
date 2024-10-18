@@ -1,12 +1,10 @@
 {
-    "Relation ID": 13790,
+    "RelationID": 13790,
     "category": "CommonAttribute",
-    "destination ID": 101,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "France"
     },
-    "source": "Taylor",
-    "source ID": 77,
-    "target": "Dakota"
+    "source": 77,
+    "target": 101
 }

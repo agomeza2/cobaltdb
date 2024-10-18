@@ -1,12 +1,10 @@
 {
-    "Relation ID": 1007,
+    "RelationID": 1007,
     "category": "CommonAttribute",
-    "destination ID": 49,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Germany"
     },
-    "source": "Quinn",
-    "source ID": 8,
-    "target": "Dakota"
+    "source": 8,
+    "target": 49
 }

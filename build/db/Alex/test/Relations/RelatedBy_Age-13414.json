@@ -1,12 +1,10 @@
 {
-    "Relation ID": 13414,
+    "RelationID": 13414,
     "category": "CommonAttribute",
-    "destination ID": 90,
     "name": "RelatedBy_Age",
     "properties": {
         "Age": "25"
     },
-    "source": "Sydney",
-    "source ID": 73,
-    "target": "Jordan"
+    "source": 73,
+    "target": 90
 }

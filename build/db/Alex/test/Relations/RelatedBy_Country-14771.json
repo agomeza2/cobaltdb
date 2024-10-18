@@ -1,12 +1,10 @@
 {
-    "Relation ID": 14771,
+    "RelationID": 14771,
     "category": "CommonAttribute",
-    "destination ID": 98,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "India"
     },
-    "source": "Riley",
-    "source ID": 97,
-    "target": "Quinn"
+    "source": 97,
+    "target": 98
 }

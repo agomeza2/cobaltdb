@@ -1,12 +1,10 @@
 {
-    "Relation ID": 6158,
+    "RelationID": 6158,
     "category": "CommonAttribute",
-    "destination ID": 56,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Brazil"
     },
-    "source": "Casey",
-    "source ID": 28,
-    "target": "Morgan"
+    "source": 28,
+    "target": 56
 }

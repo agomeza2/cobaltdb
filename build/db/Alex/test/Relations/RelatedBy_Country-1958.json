@@ -1,12 +1,10 @@
 {
-    "Relation ID": 1958,
+    "RelationID": 1958,
     "category": "CommonAttribute",
-    "destination ID": 84,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "USA"
     },
-    "source": "Dakota",
-    "source ID": 11,
-    "target": "Jordan"
+    "source": 11,
+    "target": 84
 }

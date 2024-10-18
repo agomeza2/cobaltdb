@@ -1,12 +1,10 @@
 {
-    "Relation ID": 2,
+    "RelationID": 2,
     "category": "Owner",
-    "destination ID": 4,
     "name": "only owner",
     "properties": {
         "time": 17
     },
-    "source": "Makoto",
-    "source ID": 3,
-    "target": "Chito"
+    "source": 3,
+    "target": 4
 }

@@ -1,12 +1,10 @@
 {
-    "Relation ID": 12758,
+    "RelationID": 12758,
     "category": "CommonAttribute",
-    "destination ID": 72,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "India"
     },
-    "source": "Dakota",
-    "source ID": 67,
-    "target": "Casey"
+    "source": 67,
+    "target": 72
 }

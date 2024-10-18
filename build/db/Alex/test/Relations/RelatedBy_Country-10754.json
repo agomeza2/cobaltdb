@@ -1,12 +1,10 @@
 {
-    "Relation ID": 10754,
+    "RelationID": 10754,
     "category": "CommonAttribute",
-    "destination ID": 64,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Germany"
     },
-    "source": "Morgan",
-    "source ID": 52,
-    "target": "Casey"
+    "source": 52,
+    "target": 64
 }

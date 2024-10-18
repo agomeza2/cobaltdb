@@ -1,12 +1,10 @@
 {
-    "Relation ID": 8222,
+    "RelationID": 8222,
     "category": "CommonAttribute",
-    "destination ID": 39,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Germany"
     },
-    "source": "Alex",
-    "source ID": 38,
-    "target": "Alex"
+    "source": 38,
+    "target": 39
 }

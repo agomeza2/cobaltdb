@@ -1,12 +1,10 @@
 {
-    "Relation ID": 9899,
+    "RelationID": 9899,
     "category": "CommonAttribute",
-    "destination ID": 49,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Colombia"
     },
-    "source": "Casey",
-    "source ID": 47,
-    "target": "Dakota"
+    "source": 47,
+    "target": 49
 }

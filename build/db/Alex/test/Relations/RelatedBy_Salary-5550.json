@@ -1,12 +1,10 @@
 {
-    "Relation ID": 5550,
+    "RelationID": 5550,
     "category": "CommonAttribute",
-    "destination ID": 85,
     "name": "RelatedBy_Salary",
     "properties": {
         "Salary": "75405"
     },
-    "source": "Alex",
-    "source ID": 25,
-    "target": "Dakota"
+    "source": 25,
+    "target": 85
 }

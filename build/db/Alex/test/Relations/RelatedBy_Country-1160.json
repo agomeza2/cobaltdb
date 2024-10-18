@@ -1,12 +1,10 @@
 {
-    "Relation ID": 1160,
+    "RelationID": 1160,
     "category": "CommonAttribute",
-    "destination ID": 100,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Germany"
     },
-    "source": "Quinn",
-    "source ID": 8,
-    "target": "Morgan"
+    "source": 8,
+    "target": 100
 }

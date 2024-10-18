@@ -1,12 +1,10 @@
 {
-    "Relation ID": 7043,
+    "RelationID": 7043,
     "category": "CommonAttribute",
-    "destination ID": 57,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "France"
     },
-    "source": "Casey",
-    "source ID": 32,
-    "target": "Jordan"
+    "source": 32,
+    "target": 57
 }

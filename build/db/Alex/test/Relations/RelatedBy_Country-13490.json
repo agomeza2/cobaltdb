@@ -1,12 +1,10 @@
 {
-    "Relation ID": 13490,
+    "RelationID": 13490,
     "category": "CommonAttribute",
-    "destination ID": 85,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Colombia"
     },
-    "source": "Morgan",
-    "source ID": 74,
-    "target": "Dakota"
+    "source": 74,
+    "target": 85
 }

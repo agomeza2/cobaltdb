@@ -1,12 +1,10 @@
 {
-    "Relation ID": 3128,
+    "RelationID": 3128,
     "category": "CommonAttribute",
-    "destination ID": 24,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Brazil"
     },
-    "source": "Quinn",
-    "source ID": 16,
-    "target": "Cameron"
+    "source": 16,
+    "target": 24
 }

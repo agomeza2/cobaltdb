@@ -1,12 +1,10 @@
 {
-    "Relation ID": 10652,
+    "RelationID": 10652,
     "category": "CommonAttribute",
-    "destination ID": 82,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "India"
     },
-    "source": "Cameron",
-    "source ID": 51,
-    "target": "Cameron"
+    "source": 51,
+    "target": 82
 }

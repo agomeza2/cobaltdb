@@ -1,12 +1,10 @@
 {
-    "Relation ID": 3809,
+    "RelationID": 3809,
     "category": "CommonAttribute",
-    "destination ID": 78,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "India"
     },
-    "source": "Taylor",
-    "source ID": 18,
-    "target": "Sydney"
+    "source": 18,
+    "target": 78
 }

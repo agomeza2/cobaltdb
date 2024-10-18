@@ -1,12 +1,10 @@
 {
-    "Relation ID": 9563,
+    "RelationID": 9563,
     "category": "CommonAttribute",
-    "destination ID": 52,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Japan"
     },
-    "source": "Quinn",
-    "source ID": 45,
-    "target": "Morgan"
+    "source": 45,
+    "target": 52
 }

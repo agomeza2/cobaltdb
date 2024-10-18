@@ -1,12 +1,10 @@
 {
-    "Relation ID": 13724,
+    "RelationID": 13724,
     "category": "CommonAttribute",
-    "destination ID": 79,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "France"
     },
-    "source": "Taylor",
-    "source ID": 77,
-    "target": "Quinn"
+    "source": 77,
+    "target": 79
 }

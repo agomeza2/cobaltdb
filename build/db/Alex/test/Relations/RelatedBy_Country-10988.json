@@ -1,12 +1,10 @@
 {
-    "Relation ID": 10988,
+    "RelationID": 10988,
     "category": "CommonAttribute",
-    "destination ID": 91,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Colombia"
     },
-    "source": "Riley",
-    "source ID": 53,
-    "target": "Cameron"
+    "source": 53,
+    "target": 91
 }

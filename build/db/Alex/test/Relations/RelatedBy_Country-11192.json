@@ -1,12 +1,10 @@
 {
-    "Relation ID": 11192,
+    "RelationID": 11192,
     "category": "CommonAttribute",
-    "destination ID": 60,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "USA"
     },
-    "source": "Riley",
-    "source ID": 55,
-    "target": "Dakota"
+    "source": 55,
+    "target": 60
 }

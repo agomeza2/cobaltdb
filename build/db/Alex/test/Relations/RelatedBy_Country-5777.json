@@ -1,12 +1,10 @@
 {
-    "Relation ID": 5777,
+    "RelationID": 5777,
     "category": "CommonAttribute",
-    "destination ID": 82,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "UK"
     },
-    "source": "Dakota",
-    "source ID": 26,
-    "target": "Cameron"
+    "source": 26,
+    "target": 82
 }

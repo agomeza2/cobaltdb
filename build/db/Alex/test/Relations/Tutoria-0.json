@@ -1,13 +1,11 @@
 {
-    "Relation ID": 0,
+    "RelationID": 0,
     "category": "Teach",
-    "destination ID": 1,
     "name": "Tutoria",
     "properties": {
         "classroom": 202,
         "time": 12
     },
-    "source": "Joe",
-    "source ID": 0,
-    "target": "Mia"
+    "source": 0,
+    "target": 1
 }

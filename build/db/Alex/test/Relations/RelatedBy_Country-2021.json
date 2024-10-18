@@ -1,12 +1,10 @@
 {
-    "Relation ID": 2021,
+    "RelationID": 2021,
     "category": "CommonAttribute",
-    "destination ID": 13,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Japan"
     },
-    "source": "Casey",
-    "source ID": 12,
-    "target": "Dakota"
+    "source": 12,
+    "target": 13
 }

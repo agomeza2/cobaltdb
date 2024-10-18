@@ -1,12 +1,10 @@
 {
-    "Relation ID": 2336,
+    "RelationID": 2336,
     "category": "CommonAttribute",
-    "destination ID": 27,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "India"
     },
-    "source": "Dakota",
-    "source ID": 13,
-    "target": "Alex"
+    "source": 13,
+    "target": 27
 }

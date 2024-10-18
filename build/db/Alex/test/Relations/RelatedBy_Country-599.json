@@ -1,12 +1,10 @@
 {
-    "Relation ID": 599,
+    "RelationID": 599,
     "category": "CommonAttribute",
-    "destination ID": 9,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Canada"
     },
-    "source": "Alex",
-    "source ID": 7,
-    "target": "Riley"
+    "source": 7,
+    "target": 9
 }

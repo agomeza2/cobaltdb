@@ -1,12 +1,10 @@
 {
-    "Relation ID": 5516,
+    "RelationID": 5516,
     "category": "CommonAttribute",
-    "destination ID": 73,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Canada"
     },
-    "source": "Alex",
-    "source ID": 25,
-    "target": "Sydney"
+    "source": 25,
+    "target": 73
 }

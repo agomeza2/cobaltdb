@@ -1,12 +1,10 @@
 {
-    "Relation ID": 5051,
+    "RelationID": 5051,
     "category": "CommonAttribute",
-    "destination ID": 77,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Brazil"
     },
-    "source": "Sydney",
-    "source ID": 23,
-    "target": "Taylor"
+    "source": 23,
+    "target": 77
 }

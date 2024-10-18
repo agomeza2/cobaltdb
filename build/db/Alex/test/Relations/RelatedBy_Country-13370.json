@@ -1,12 +1,10 @@
 {
-    "Relation ID": 13370,
+    "RelationID": 13370,
     "category": "CommonAttribute",
-    "destination ID": 75,
     "name": "RelatedBy_Country",
     "properties": {
         "Country": "Colombia"
     },
-    "source": "Sydney",
-    "source ID": 73,
-    "target": "Riley"
+    "source": 73,
+    "target": 75
 }

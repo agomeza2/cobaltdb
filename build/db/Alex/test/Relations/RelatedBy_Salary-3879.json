@@ -1,12 +1,10 @@
 {
-    "Relation ID": 3879,
+    "RelationID": 3879,
     "category": "CommonAttribute",
-    "destination ID": 102,
     "name": "RelatedBy_Salary",
     "properties": {
         "Salary": "51985"
     },
-    "source": "Taylor",
-    "source ID": 18,
-    "target": "Jordan"
+    "source": 18,
+    "target": 102
 }
