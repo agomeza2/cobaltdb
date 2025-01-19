@@ -1,3 +1,0 @@
-C:/Users/Alex/cobaltdb/build/CMakeFiles/cobalt.dir
-C:/Users/Alex/cobaltdb/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Alex/cobaltdb/build/CMakeFiles/ZERO_CHECK.dir
