@@ -1,0 +1,28 @@
+{
+  "source": {
+    "name": "Quinn",
+    "category": "Name",
+    "ID": 6,
+    "properties": {
+      "Age": "65",
+      "Country": "Germany",
+      "Salary": "80057"
+    }
+  },
+  "target": {
+    "name": "Dakota",
+    "category": "Name",
+    "ID": 20,
+    "properties": {
+      "Age": "42",
+      "Country": "Germany",
+      "Salary": "94249"
+    }
+  },
+  "name": "CommonAttributeCountry_5",
+  "category": "RelatedBy_Country",
+  "ID": 9,
+  "properties": {
+    "Country": "Germany"
+  }
+}

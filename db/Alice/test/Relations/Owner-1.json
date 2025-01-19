@@ -1,0 +1,25 @@
+{
+  "source": {
+    "name": "Bob",
+    "category": "Person",
+    "ID": 1,
+    "properties": {
+      "age": 25,
+      "city": "Builderland"
+    }
+  },
+  "target": {
+    "name": "Charlie",
+    "category": "Animal",
+    "ID": 2,
+    "properties": {
+      "type": "Dog"
+    }
+  },
+  "name": "Owner",
+  "category": "Ownership",
+  "ID": 1,
+  "properties": {
+    "since": 2020
+  }
+}

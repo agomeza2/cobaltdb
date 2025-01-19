@@ -1,0 +1,9 @@
+{
+  "name": "Bob",
+  "category": "Person",
+  "ID": 1,
+  "properties": {
+    "age": 25,
+    "city": "Builderland"
+  }
+}

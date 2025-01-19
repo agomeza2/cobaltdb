@@ -1,0 +1,28 @@
+{
+  "source": {
+    "name": "Alex",
+    "category": "Name",
+    "ID": 5,
+    "properties": {
+      "Age": "21",
+      "Country": "Canada",
+      "Salary": "101153"
+    }
+  },
+  "target": {
+    "name": "Alex",
+    "category": "Name",
+    "ID": 15,
+    "properties": {
+      "Age": "45",
+      "Country": "Canada",
+      "Salary": "74239"
+    }
+  },
+  "name": "CommonAttributeCountry_2",
+  "category": "RelatedBy_Country",
+  "ID": 6,
+  "properties": {
+    "Country": "Canada"
+  }
+}

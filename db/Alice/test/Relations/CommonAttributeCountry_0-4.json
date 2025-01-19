@@ -1,0 +1,28 @@
+{
+  "source": {
+    "name": "Dakota",
+    "category": "Name",
+    "ID": 4,
+    "properties": {
+      "Age": "64",
+      "Country": "Brazil",
+      "Salary": "55818"
+    }
+  },
+  "target": {
+    "name": "Quinn",
+    "category": "Name",
+    "ID": 14,
+    "properties": {
+      "Age": "63",
+      "Country": "Brazil",
+      "Salary": "112758"
+    }
+  },
+  "name": "CommonAttributeCountry_0",
+  "category": "RelatedBy_Country",
+  "ID": 4,
+  "properties": {
+    "Country": "Brazil"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "source": {
+    "name": "Dakota",
+    "category": "Name",
+    "ID": 9,
+    "properties": {
+      "Age": "43",
+      "Country": "USA",
+      "Salary": "89794"
+    }
+  },
+  "target": {
+    "name": "Alex",
+    "category": "Name",
+    "ID": 19,
+    "properties": {
+      "Age": "43",
+      "Country": "Colombia",
+      "Salary": "36348"
+    }
+  },
+  "name": "CommonAttributeAge_14",
+  "category": "RelatedBy_Age",
+  "ID": 18,
+  "properties": {
+    "Age": "43"
+  }
+}
