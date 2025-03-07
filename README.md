@@ -1,7 +1,8 @@
 COBALTDB
 is an opensource Graphical Database manager 
 
-cobaltdb works with our own custom SQL-like language:
+cobaltdb works with our own custom Cypher-like language:
+
 Keywords
 • SEARCH
 • WHERE
@@ -40,6 +41,8 @@ Keywords
 • HOW MANY
 • RETURN
 • ADD
+
+Examples: 
 
 CREATE DATABASE test; //creamos la base de datos
 
