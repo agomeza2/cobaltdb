@@ -8,13 +8,13 @@ const PORT = 5500;
 
 // Middleware para permitir el acceso desde el frontend
 app.use(express.json());
-app.use(express.static('lib/GUI/pantalla')); // Servir archivos estáticos como HTML, CSS, etc.
+app.use(express.static('GUI/pantalla')); // Servir archivos estáticos como HTML, CSS, etc.
 
 // Endpoint para enviar los datos combinados al frontend
 app.get('/api/datos', async (req, res) => {
   try {
-    const cNodos = 'build/db/Alex/test/Nodes';
-    const cLinks = 'build/db/Alex/test/Relations';
+    const cNodos = 'db/Alice/test/Nodes';
+    const cLinks = 'db/Alice/test/Relations';
     
     // Leer y combinar los archivos (basado en la lógica previa)
     const leerArchivosDesdeCarpeta = async (carpeta) => {
