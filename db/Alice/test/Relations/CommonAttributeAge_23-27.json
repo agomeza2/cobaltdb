@@ -1,0 +1,28 @@
+{
+  "source": {
+    "name": "Riley",
+    "category": "Name",
+    "ID": 18,
+    "properties": {
+      "Age": "51",
+      "Country": "Australia",
+      "Salary": "78996"
+    }
+  },
+  "target": {
+    "name": "Sydney",
+    "category": "Name",
+    "ID": 21,
+    "properties": {
+      "Age": "51",
+      "Country": "Brazil",
+      "Salary": "78650"
+    }
+  },
+  "name": "CommonAttributeAge_23",
+  "category": "RelatedBy_Age",
+  "ID": 27,
+  "properties": {
+    "Age": "51"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "source": {
+    "name": "Riley",
+    "category": "Name",
+    "ID": 7,
+    "properties": {
+      "Age": "46",
+      "Country": "Germany",
+      "Salary": "76969"
+    }
+  },
+  "target": {
+    "name": "Dakota",
+    "category": "Name",
+    "ID": 13,
+    "properties": {
+      "Age": "42",
+      "Country": "Germany",
+      "Salary": "102403"
+    }
+  },
+  "name": "CommonAttributeCountry_6",
+  "category": "RelatedBy_Country",
+  "ID": 10,
+  "properties": {
+    "Country": "Germany"
+  }
+}

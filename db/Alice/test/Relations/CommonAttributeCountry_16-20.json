@@ -1,0 +1,28 @@
+{
+  "source": {
+    "name": "Dakota",
+    "category": "Name",
+    "ID": 11,
+    "properties": {
+      "Age": "57",
+      "Country": "India",
+      "Salary": "111613"
+    }
+  },
+  "target": {
+    "name": "Casey",
+    "category": "Name",
+    "ID": 12,
+    "properties": {
+      "Age": "41",
+      "Country": "India",
+      "Salary": "98932"
+    }
+  },
+  "name": "CommonAttributeCountry_16",
+  "category": "RelatedBy_Country",
+  "ID": 20,
+  "properties": {
+    "Country": "India"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "source": {
+    "name": "Alice",
+    "category": "Person",
+    "ID": 0,
+    "properties": {
+      "age": 30,
+      "city": "Wonderland"
+    }
+  },
+  "target": {
+    "name": "Charlie",
+    "category": "Animal",
+    "ID": 2,
+    "properties": {
+      "type": "Dog"
+    }
+  },
+  "name": "Owner",
+  "category": "Ownership",
+  "ID": 3,
+  "properties": {
+    "since": 2020
+  }
+}
