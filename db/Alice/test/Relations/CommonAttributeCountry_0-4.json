@@ -3,8 +3,8 @@
   "category": "RelatedBy_Country",
   "name": "CommonAttributeCountry_0",
   "properties": {
-    "Country": "Brazil"
+    "Country": "UK"
   },
-  "source": 4,
-  "target": 14
+  "source": 3,
+  "target": 24
 }

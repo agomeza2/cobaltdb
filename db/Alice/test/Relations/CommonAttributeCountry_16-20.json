@@ -3,8 +3,8 @@
   "category": "RelatedBy_Country",
   "name": "CommonAttributeCountry_16",
   "properties": {
-    "Country": "India"
+    "Country": "Brazil"
   },
-  "source": 11,
-  "target": 12
+  "source": 4,
+  "target": 69
 }

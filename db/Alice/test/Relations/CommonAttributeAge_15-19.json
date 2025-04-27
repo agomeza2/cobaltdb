@@ -3,8 +3,8 @@
   "category": "RelatedBy_Age",
   "name": "CommonAttributeAge_15",
   "properties": {
-    "Age": "41"
+    "Age": "64"
   },
-  "source": 10,
-  "target": 12
+  "source": 4,
+  "target": 45
 }

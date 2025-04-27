@@ -1,0 +1,10 @@
+{
+  "RelationID": 171,
+  "category": "RelatedBy_Country",
+  "name": "CommonAttributeCountry_167",
+  "properties": {
+    "Country": "USA"
+  },
+  "source": 17,
+  "target": 53
+}
