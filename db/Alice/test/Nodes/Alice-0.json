@@ -1,9 +1,0 @@
-{
-  "ID": 0,
-  "category": "Person",
-  "name": "Alice",
-  "properties": {
-    "age": 30,
-    "city": "Wonderland"
-  }
-}
