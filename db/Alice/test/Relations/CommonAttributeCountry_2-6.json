@@ -1,28 +1,10 @@
 {
-  "source": {
-    "name": "Alex",
-    "category": "Name",
-    "ID": 5,
-    "properties": {
-      "Age": "21",
-      "Country": "Canada",
-      "Salary": "101153"
-    }
-  },
-  "target": {
-    "name": "Alex",
-    "category": "Name",
-    "ID": 15,
-    "properties": {
-      "Age": "45",
-      "Country": "Canada",
-      "Salary": "74239"
-    }
-  },
-  "name": "CommonAttributeCountry_2",
+  "RelationID": 6,
   "category": "RelatedBy_Country",
-  "ID": 6,
+  "name": "CommonAttributeCountry_2",
   "properties": {
     "Country": "Canada"
-  }
+  },
+  "source": 5,
+  "target": 15
 }

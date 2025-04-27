@@ -1,28 +1,10 @@
 {
-  "source": {
-    "name": "Riley",
-    "category": "Name",
-    "ID": 8,
-    "properties": {
-      "Age": "51",
-      "Country": "India",
-      "Salary": "78485"
-    }
-  },
-  "target": {
-    "name": "Sydney",
-    "category": "Name",
-    "ID": 21,
-    "properties": {
-      "Age": "51",
-      "Country": "Brazil",
-      "Salary": "78650"
-    }
-  },
-  "name": "CommonAttributeAge_12",
+  "RelationID": 16,
   "category": "RelatedBy_Age",
-  "ID": 16,
+  "name": "CommonAttributeAge_12",
   "properties": {
     "Age": "51"
-  }
+  },
+  "source": 8,
+  "target": 21
 }

@@ -1,28 +1,10 @@
 {
-  "source": {
-    "name": "Dakota",
-    "category": "Name",
-    "ID": 13,
-    "properties": {
-      "Age": "42",
-      "Country": "Germany",
-      "Salary": "102403"
-    }
-  },
-  "target": {
-    "name": "Dakota",
-    "category": "Name",
-    "ID": 20,
-    "properties": {
-      "Age": "42",
-      "Country": "Germany",
-      "Salary": "94249"
-    }
-  },
-  "name": "CommonAttributeAge_19",
+  "RelationID": 23,
   "category": "RelatedBy_Age",
-  "ID": 23,
+  "name": "CommonAttributeAge_19",
   "properties": {
     "Age": "42"
-  }
+  },
+  "source": 13,
+  "target": 20
 }

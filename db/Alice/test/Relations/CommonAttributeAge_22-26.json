@@ -1,28 +1,10 @@
 {
-  "source": {
-    "name": "Alex",
-    "category": "Name",
-    "ID": 15,
-    "properties": {
-      "Age": "45",
-      "Country": "Canada",
-      "Salary": "74239"
-    }
-  },
-  "target": {
-    "name": "Jordan",
-    "category": "Name",
-    "ID": 17,
-    "properties": {
-      "Age": "45",
-      "Country": "USA",
-      "Salary": "85168"
-    }
-  },
-  "name": "CommonAttributeAge_22",
+  "RelationID": 26,
   "category": "RelatedBy_Age",
-  "ID": 26,
+  "name": "CommonAttributeAge_22",
   "properties": {
     "Age": "45"
-  }
+  },
+  "source": 15,
+  "target": 17
 }

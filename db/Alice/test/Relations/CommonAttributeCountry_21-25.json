@@ -1,28 +1,10 @@
 {
-  "source": {
-    "name": "Quinn",
-    "category": "Name",
-    "ID": 14,
-    "properties": {
-      "Age": "63",
-      "Country": "Brazil",
-      "Salary": "112758"
-    }
-  },
-  "target": {
-    "name": "Sydney",
-    "category": "Name",
-    "ID": 21,
-    "properties": {
-      "Age": "51",
-      "Country": "Brazil",
-      "Salary": "78650"
-    }
-  },
-  "name": "CommonAttributeCountry_21",
+  "RelationID": 25,
   "category": "RelatedBy_Country",
-  "ID": 25,
+  "name": "CommonAttributeCountry_21",
   "properties": {
     "Country": "Brazil"
-  }
+  },
+  "source": 14,
+  "target": 21
 }

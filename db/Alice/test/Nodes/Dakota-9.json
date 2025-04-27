@@ -1,7 +1,7 @@
 {
-  "name": "Dakota",
-  "category": "Name",
   "ID": 9,
+  "category": "Name",
+  "name": "Dakota",
   "properties": {
     "Age": "43",
     "Country": "USA",

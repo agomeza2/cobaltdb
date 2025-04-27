@@ -78,7 +78,16 @@ func (r *Relation) Add(key string, value interface{}) {
 
 // Converts the relation to JSON
 func (r *Relation) ToJSON() ([]byte, error) {
-	return json.MarshalIndent(r, "", "  ")
+	data :=map[string] interface{}{
+        "RelationID":r.ID,
+        "category":   r.Category,
+        "name":       r.Name,
+        "properties": r.Properties,
+		"source":   r.Source.ID,
+		"target":   r.Target.ID,
+    }
+
+    return json.MarshalIndent(data, "", "  ")
 }
 
 // Writes the relation attributes to a JSON file

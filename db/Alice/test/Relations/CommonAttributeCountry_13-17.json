@@ -1,28 +1,10 @@
 {
-  "source": {
-    "name": "Dakota",
-    "category": "Name",
-    "ID": 9,
-    "properties": {
-      "Age": "43",
-      "Country": "USA",
-      "Salary": "89794"
-    }
-  },
-  "target": {
-    "name": "Jordan",
-    "category": "Name",
-    "ID": 17,
-    "properties": {
-      "Age": "45",
-      "Country": "USA",
-      "Salary": "85168"
-    }
-  },
-  "name": "CommonAttributeCountry_13",
+  "RelationID": 17,
   "category": "RelatedBy_Country",
-  "ID": 17,
+  "name": "CommonAttributeCountry_13",
   "properties": {
     "Country": "USA"
-  }
+  },
+  "source": 9,
+  "target": 17
 }

@@ -1,28 +1,10 @@
 {
-  "source": {
-    "name": "Dakota",
-    "category": "Name",
-    "ID": 4,
-    "properties": {
-      "Age": "64",
-      "Country": "Brazil",
-      "Salary": "55818"
-    }
-  },
-  "target": {
-    "name": "Sydney",
-    "category": "Name",
-    "ID": 21,
-    "properties": {
-      "Age": "51",
-      "Country": "Brazil",
-      "Salary": "78650"
-    }
-  },
-  "name": "CommonAttributeCountry_1",
+  "RelationID": 5,
   "category": "RelatedBy_Country",
-  "ID": 5,
+  "name": "CommonAttributeCountry_1",
   "properties": {
     "Country": "Brazil"
-  }
+  },
+  "source": 4,
+  "target": 21
 }

@@ -1,28 +1,10 @@
 {
-  "source": {
-    "name": "Quinn",
-    "category": "Name",
-    "ID": 6,
-    "properties": {
-      "Age": "65",
-      "Country": "Germany",
-      "Salary": "80057"
-    }
-  },
-  "target": {
-    "name": "Riley",
-    "category": "Name",
-    "ID": 7,
-    "properties": {
-      "Age": "46",
-      "Country": "Germany",
-      "Salary": "76969"
-    }
-  },
-  "name": "CommonAttributeCountry_3",
+  "RelationID": 7,
   "category": "RelatedBy_Country",
-  "ID": 7,
+  "name": "CommonAttributeCountry_3",
   "properties": {
     "Country": "Germany"
-  }
+  },
+  "source": 6,
+  "target": 7
 }

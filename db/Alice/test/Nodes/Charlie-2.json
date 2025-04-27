@@ -1,7 +1,7 @@
 {
-  "name": "Charlie",
-  "category": "Animal",
   "ID": 2,
+  "category": "Animal",
+  "name": "Charlie",
   "properties": {
     "type": "Dog"
   }

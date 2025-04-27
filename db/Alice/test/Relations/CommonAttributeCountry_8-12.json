@@ -1,28 +1,10 @@
 {
-  "source": {
-    "name": "Riley",
-    "category": "Name",
-    "ID": 8,
-    "properties": {
-      "Age": "51",
-      "Country": "India",
-      "Salary": "78485"
-    }
-  },
-  "target": {
-    "name": "Dakota",
-    "category": "Name",
-    "ID": 11,
-    "properties": {
-      "Age": "57",
-      "Country": "India",
-      "Salary": "111613"
-    }
-  },
-  "name": "CommonAttributeCountry_8",
+  "RelationID": 12,
   "category": "RelatedBy_Country",
-  "ID": 12,
+  "name": "CommonAttributeCountry_8",
   "properties": {
     "Country": "India"
-  }
+  },
+  "source": 8,
+  "target": 11
 }

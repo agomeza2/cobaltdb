@@ -1,25 +1,10 @@
 {
-  "source": {
-    "name": "Charlie",
-    "category": "Animal",
-    "ID": 2,
-    "properties": {
-      "type": "Dog"
-    }
-  },
-  "target": {
-    "name": "Bob",
-    "category": "Person",
-    "ID": 1,
-    "properties": {
-      "age": 25,
-      "city": "Builderland"
-    }
-  },
-  "name": "Close Friends",
+  "RelationID": 2,
   "category": "Friendship",
-  "ID": 2,
+  "name": "Close Friends",
   "properties": {
     "duration": 5
-  }
+  },
+  "source": 2,
+  "target": 1
 }

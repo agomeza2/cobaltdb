@@ -1,26 +1,10 @@
 {
-  "source": {
-    "name": "Alice",
-    "category": "Person",
-    "ID": 0,
-    "properties": {
-      "age": 30,
-      "city": "Wonderland"
-    }
-  },
-  "target": {
-    "name": "Bob",
-    "category": "Person",
-    "ID": 1,
-    "properties": {
-      "age": 25,
-      "city": "Builderland"
-    }
-  },
-  "name": "Close Friends",
+  "RelationID": 0,
   "category": "Friendship",
-  "ID": 0,
+  "name": "Close Friends",
   "properties": {
     "duration": 5
-  }
+  },
+  "source": 0,
+  "target": 1
 }

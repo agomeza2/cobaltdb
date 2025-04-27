@@ -1,7 +1,7 @@
 {
-  "name": "Quinn",
-  "category": "Name",
   "ID": 14,
+  "category": "Name",
+  "name": "Quinn",
   "properties": {
     "Age": "63",
     "Country": "Brazil",

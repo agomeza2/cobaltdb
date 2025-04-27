@@ -1,7 +1,7 @@
 {
-  "name": "Taylor",
-  "category": "Name",
   "ID": 16,
+  "category": "Name",
+  "name": "Taylor",
   "properties": {
     "Age": "40",
     "Country": "India",

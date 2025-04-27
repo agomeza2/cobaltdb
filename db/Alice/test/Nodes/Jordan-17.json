@@ -1,7 +1,7 @@
 {
-  "name": "Jordan",
-  "category": "Name",
   "ID": 17,
+  "category": "Name",
+  "name": "Jordan",
   "properties": {
     "Age": "45",
     "Country": "USA",

@@ -1,28 +1,10 @@
 {
-  "source": {
-    "name": "Riley",
-    "category": "Name",
-    "ID": 7,
-    "properties": {
-      "Age": "46",
-      "Country": "Germany",
-      "Salary": "76969"
-    }
-  },
-  "target": {
-    "name": "Dakota",
-    "category": "Name",
-    "ID": 20,
-    "properties": {
-      "Age": "42",
-      "Country": "Germany",
-      "Salary": "94249"
-    }
-  },
-  "name": "CommonAttributeCountry_7",
+  "RelationID": 11,
   "category": "RelatedBy_Country",
-  "ID": 11,
+  "name": "CommonAttributeCountry_7",
   "properties": {
     "Country": "Germany"
-  }
+  },
+  "source": 7,
+  "target": 20
 }

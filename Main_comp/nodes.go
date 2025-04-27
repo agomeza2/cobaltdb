@@ -87,7 +87,14 @@ func (n *Node) Add(key string, value interface{}) {
 
 // Converts the node to JSON
 func (n *Node) ToJSON() ([]byte, error) {
-    return json.MarshalIndent(n, "", "  ")
+    data :=map[string]interface{}{
+        "ID":    n.ID, 
+        "category":   n.Category,                                                                   
+        "name":       n.Name,
+        "properties": n.Properties,
+    }
+
+    return json.MarshalIndent(data, "", "  ")
 }
 
 // Writes the node attributes to a JSON file
