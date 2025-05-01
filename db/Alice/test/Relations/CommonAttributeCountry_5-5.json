@@ -1,0 +1,10 @@
+{
+  "RelationID": 5,
+  "category": "RelatedBy_Country",
+  "name": "CommonAttributeCountry_5",
+  "properties": {
+    "Country": "UK"
+  },
+  "source": 0,
+  "target": 84
+}
