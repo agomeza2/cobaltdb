@@ -6,11 +6,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <h3>Bienvenido a CobaltDB</h3>
+    <form id='login' onsubmit="return verificarLogin()">
+        Usuario:
+        <input type="text" id = "usuario" size="30" required><br>
+        Contraseña:
+        <input type="password" id="contraseña" size ="30" required><br>
+        <input type="submit" value="Ingresar">
+    </form>
     <div id="container"></div>
+
+    <script>
+        const usuario = "administrador"
+        const contraseña = "123456"
+
+        function verificarLogin(){
+            const usuarioIngresado = document.getElementById("usuario").value;
+            const contraIngresada = document.getElementById("contraseña").value;
+
+            if(usuarioIngresado === usuario&&contraIngresada===contraseña){
+                alert("Inicio de sesion");
+
+                document.getElementById('login').style.display = 'none';
+
+                const script = document.createElement('script');
+                script.type = 'module';
+                script.src = 'app.js';
+                document.body.appendChild(script);
+
+                return false;
+            }else{
+                alert('usuario o contraseña incorrecto');
+                return false;
+            }
+        }
+    </script>
+
     <div id="card" class="hidden">¡Hola! Soy una tarjeta.</div>
-    <script type="module" src="app.js">
-    </script> 
 
 </body>
 </html>

@@ -10,6 +10,10 @@ const PORT = 5500;
 app.use(express.json());
 app.use(express.static('GUI/pantalla')); // Servir archivos estáticos como HTML, CSS, etc.
 
+app.get("/",(req,res)=>{
+  res.sendFile(path.join(__dirname,'GUI/pantalla/index.html'))
+})
+
 // Endpoint para enviar los datos combinados al frontend
 app.get('/api/datos', async (req, res) => {
   try {
