@@ -6,14 +6,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h3>Bienvenido a CobaltDB</h3>
-    <form id='login' onsubmit="return verificarLogin()">
-        Usuario:
-        <input type="text" id = "usuario" size="30" required><br>
-        Contraseña:
-        <input type="password" id="contraseña" size ="30" required><br>
-        <input type="submit" value="Ingresar">
-    </form>
+    <h3 id="mensaje_inicio">Bienvenido a CobaltDB</h3>
+    <div class="formulario">
+        <form id='login' onsubmit="return verificarLogin()">
+            <div class="usuario">
+                Usuario:<br>
+                <input type="text" id = "usuario" size="30" required><br>
+                <br>
+                Contraseña:
+                <input type="password" id="contraseña" size ="30" required><br>
+                <input type="submit" value="Ingresar">
+            </div>
+            
+        </form>
+    </div>
     <div id="container"></div>
 
     <script>
@@ -28,6 +34,8 @@
                 alert("Inicio de sesion");
 
                 document.getElementById('login').style.display = 'none';
+                document.getElementById('container').style.display = 'flex';
+                document.getElementById('mensaje_inicio').style.display = 'none';
 
                 const script = document.createElement('script');
                 script.type = 'module';
