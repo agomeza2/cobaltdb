@@ -6,28 +6,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h3 id="mensaje_inicio">Bienvenido a CobaltDB</h3>
-    <div class="formulario">
-        <form id='login' onsubmit="return verificarLogin()">
-            <div class="usuario">
-                Usuario:<br>
-                <input type="text" id = "usuario" size="30" required><br>
-                <br>
-                Contraseña:
-                <input type="password" id="contraseña" size ="30" required><br>
-                <input type="submit" value="Ingresar">
-            </div>
-            
-        </form>
-    </div>
+    <h3 id="mensaje_inicio">seleccione el servidor que quiere ejecutar</h3>
+    <button id="boton" onclick="return ServidorElegido()">Servidor de relaciones</button>
     <div id="container"></div>
 
     <script>
-        const usuario = "administrador"
-        const contraseña = "123456"
+        /*const usuario = "administrador"
+        const contraseña = "123456"*/
 
+        function ServidorElegido(){
 
-        function verificarLogin(){
+            document.getElementById('container').style.display = 'flex';
+
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = 'app.js';
+            document.body.appendChild(script);
+
+            document.getElementById('boton').style.display = 'none';
+        }
+
+        /*function verificarLogin(){
             const usuarioIngresado = document.getElementById("usuario").value;
             const contraIngresada = document.getElementById("contraseña").value;
 
@@ -38,19 +37,19 @@
                 document.getElementById('container').style.display = 'flex';
                 document.getElementById('mensaje_inicio').style.display = 'none';
 
-                /*const script = document.createElement('script');
+                const script = document.createElement('script');
                 script.type = 'module';
                 script.src = 'app.js';
-                document.body.appendChild(script);*/
+                document.body.appendChild(script);
 
-                window.location.href = "seleccionservidor.html";
+                //window.location.href = "seleccionservidor.html";
 
                 return false;
             }else{
                 alert('usuario o contraseña incorrecto');
                 return false;
             }
-        }
+        }*/
     </script>
 
     <div id="card" class="hidden">¡Hola! Soy una tarjeta.</div>
