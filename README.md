@@ -67,3 +67,5 @@ REMOVE DATABASE test
 
 LIST RELATIONS 
 LIST NODES 
+IMPORT ../salary_country.xlsx 
+EXPORT DATABASE test
