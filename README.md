@@ -1,96 +1,69 @@
 CobaltDB is a Graphical Database
 cobaltdb works with our own custom SQL-like language:
 Keywords
-• SEARCH
-• WHERE
-• CATEGORY
 • SHOW
-• GRAPH
-• FUNC
-• CREATE
-• DBINT
-• DBFLOAT
-• DBSTRING
-• DBBOOL
-• DBDATE
 • COMMON
-• WHICH
-• FOR
-• WHILE
-• LOOP
-• IF
-• ELSE
-• ELIF
 • ALTER
 • REMOVE
 • DATABASE
 • DATABASES
-• USE
 • RELATION
-• NIL
-• AND
-• NOT
-• EQ
-• OR
-• TRUE
-• FALSE
-• GROUP BY
+• IN
 • HOW MANY
-• RETURN
-• ADD
+•NODE
+•SELECT
+•CREATE
+•NODES 
+•RELATIONS
+•IMPORT 
+•EXPORT
+•LIST
+•ADD 
 
+LIST DATABASES; //vemos las bases de datos 
 CREATE DATABASE test; //creamos la base de datos
 
-USE test; //seleccionamos la base de datos 
+SELECT DATABASE test; //seleccionamos la base de datos 
 
 //creamos directamente el nodo de una persona llamada Jo 
-(people:Jo)('Jo',35,2000.4,23/04/99);
+CREATE NODE {category:people,name:jo,properties:{salary:3000,age:20}}
 
 //creamos multiples nodos llamados Lili, Martyn y Constance 
-(people:[Lili,Martyn,Constance])(['Lili',18,1000.3,04/05/08;
-'Martyn',45,4500,05/06/85;'Constance',49,3000.5,05/05/70]);
+CREATE NODES [{category:people,name:Lili,properties:{salary:5000,age:40}},{category:people,name:Martyn,properties:{salary:7000,age:90}},{category:people,name:Constance,properties:{salary:9000,age:50}}]
 //creamos una relacion 
-CREATE RELATION Teach(String name, int classroom, DATE date); 
+CREATE RELATION {category:teach,name:tutoria,properties:{classroom:202,time:"9:00"},source:0,target:89}// con los ID de los nodos de origen y destino 
 
-//asignamos una relacion entre Jo y constance, se lee como Jo ensenna a constance
-(people:Jo)=>(Teach):('tutoria',101,02/02/24)=>(people:Constance);
-
-//creamos multiple relaciones entre Martyn, Lili y Jo
-(people:[Martyn,Lili,Jo]) => (TEACH):([tutoria,101,02/03/22;clase,
-204,01/03/22;privada,303,01/03/22]) => (people:[Lili,Jo,Martyn]); 
-
+//creamos multiple relaciones entre Martyn, Lili y Jo 
+CREATE RELATIONS [{category:teach,name:tutoria2,properties:{classroom:302,time:"8:00"},source:1,target:99},{category:teach,name:tutoria3,properties:{classroom:202,time:"10:00"},source:5,target:89},{category:teach,name:tutoria4,properties:{classroom:502,time:"7:00"},source:0,target:99}]
 //vemos los atributos de Martyn
-SHOW (people:Martyn);
+SHOW NODE ID:10 
 
+SHOW NODE name:Martyn //muestra no solo un nodo sino todos los llamados Martyn, asi con mas atributos
+
+SHOW RELATION tutoria //muestra la relacion tutoria 
 //Cambiamos la edad de Martyn 
-ALTER (people:Martyn):(int age: 55);
+ALTER NODE ID:10 
 
+ALTER NODE name:Martyn
+
+ALTER RELATION ID:89
 //quitamos un atributo a Martyn 
-REMOVE (people:Martyn):(DATE birth);
-
-//le volvemos a colocar el atributo birth, pero aparecera como NIL
-ADD (people:Martyn)(Date birth)
+REMOVE age IN NODE name:Martyn
+REMOVE classroom IN Relation ID:89 
+//le volvemos a colocar el atributo age, pero aparecera como NIL
+ADD age IN NODE name:Martyn
+ADD classroom IN RELATION ID:89 
 
 //vemos los nodos en comun entre Martyn y Lili
-COMMON (people:Martyn) (people:Lili)
-
-//buscamos nodos por los parametros de edad 
-SEARCH INT age WHERE age = 18
-
-//buscamos relaciones con los parametros de salon
-SEARCH INT classroom WHERE classroom = 101
-
-//buscamos nodos y los organizamos de forma ascendente 
-SEARCH String name ASC;
-
-//buscamos nodos y los organizamos de forma descendente 
-SEARCH String name DESC
-
-//buscamos nodos de la categoria people y los agrupamos por edad, default es ascendente 
-SEARCH people GROUP BY age ;
+COMMON name:Martyn name:Lili
 
 //buscamos cuantos nodos de la categoria people hay 
-HOW MANY people;
+HOW MANY people
 
 //buscamos cuantas relaciones de la categoria teach existen
-HOW MANY Teach;
+HOW MANY Teach
+
+REMOVE DATABASE test
+
+LIST RELATIONS 
+LIST NODES 
