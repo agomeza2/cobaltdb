@@ -19,6 +19,12 @@ Keywords
 •EXPORT
 •LIST
 •ADD 
+•ADMIN 
+•STANDARD 
+
+CREATE USER Jhon ADMIN //crear usuario 
+CREATE USER Oswald STANDARD 
+--despues de esto el gestor te pedira logeo --- 
 
 LIST DATABASES; //vemos las bases de datos 
 CREATE DATABASE test; //creamos la base de datos
