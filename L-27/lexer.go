@@ -17,5 +17,5 @@ var LexerDef = lexer.MustSimple([]lexer.SimpleRule{
 	{"Punct", `[\{\}\:\,\(\)]`},
 
 	// Espacios en blanco — IMPORTANTÍSIMO: nil para ignorarlos
-	{"Whitespace", `[ \t\n\r]+`},
+	{"Whitespace", `\s+`},
 })
