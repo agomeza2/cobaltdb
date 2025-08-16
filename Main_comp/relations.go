@@ -10,21 +10,21 @@ import (
 
 // Relation struct represents a relationship between two nodes
 type Relation struct {
-	Source     *Node                 `json:"source"`      // Pointer to the source Node
-	Target     *Node                 `json:"target"`      // Pointer to the target Node
-	Name       string                 `json:"name"`        // Name of the relation
-	Category   string                 `json:"category"`    // Category of the relation
-	ID         int                    `json:"ID"`          // Unique ID for the relation
-	Properties map[string]interface{} `json:"properties"`   // Additional properties related to the relation
+	Source     *Node                  `json:"source"`     // Pointer to the source Node
+	Target     *Node                  `json:"target"`     // Pointer to the target Node
+	Name       string                 `json:"name"`       // Name of the relation
+	Category   string                 `json:"category"`   // Category of the relation
+	ID         int                    `json:"ID"`         // Unique ID for the relation
+	Properties map[string]interface{} `json:"properties"` // Additional properties related to the relation
 }
 
 var globalIDCounterRelation int = 0 // Global ID counter for all nodes
-var mu2 sync.Mutex    
+var mu2 sync.Mutex
 
 // Constructor for Relation
 func NewRelation(source *Node, target *Node, category string, name string, properties ...interface{}) *Relation {
 	mu2.Lock() // Lock to ensure thread safety
-    defer mu2.Unlock()
+	defer mu2.Unlock()
 	relation := &Relation{
 		Source:     source,
 		Target:     target,
@@ -60,7 +60,24 @@ func (r *Relation) Show() {
 	fmt.Println()
 }
 
-// Alters a property of the relation
+func (r *Relation) GetID() int {
+	return r.ID
+}
+func (r *Relation) GetName() string {
+	return r.Name
+}
+func (r *Relation) GetCategory() string {
+	return r.Category
+}
+func (r *Relation) GetProperties() map[string]interface{} {
+	return r.Properties
+}
+func (r *Relation) GetSource() *Node {
+	return r.Source
+}
+func (r *Relation) GetTarget() *Node {
+	return r.Target
+}
 func (r *Relation) Alter(key string, value interface{}) {
 	r.Properties[key] = value
 }
@@ -75,19 +92,18 @@ func (r *Relation) Add(key string, value interface{}) {
 	r.Properties[key] = value
 }
 
-
 // Converts the relation to JSON
 func (r *Relation) ToJSON() ([]byte, error) {
-	data :=map[string] interface{}{
-        "RelationID":r.ID,
-        "category":   r.Category,
-        "name":       r.Name,
-        "properties": r.Properties,
-		"source":   r.Source.ID,
-		"target":   r.Target.ID,
-    }
+	data := map[string]interface{}{
+		"RelationID": r.ID,
+		"category":   r.Category,
+		"name":       r.Name,
+		"properties": r.Properties,
+		"source":     r.Source.ID,
+		"target":     r.Target.ID,
+	}
 
-    return json.MarshalIndent(data, "", "  ")
+	return json.MarshalIndent(data, "", "  ")
 }
 
 // Writes the relation attributes to a JSON file
