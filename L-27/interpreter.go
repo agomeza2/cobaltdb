@@ -1,7 +1,7 @@
 package l27
 
 import (
-	storage "cobaltdb-local/Storage"
+	engine "cobaltdb-local/Main_comp"
 	"fmt"
 )
 
@@ -9,17 +9,17 @@ type Interpreter struct {
 	DBPath      string
 	CurrentDB   string
 	CurrentUser string
-	idx         *storage.Index
+	eng         *engine.Engine
 }
 
 func NewInterpreter(dbpath string) (*Interpreter, error) {
 	interp := &Interpreter{
 		DBPath: dbpath,
-		idx:    storage.NewIndex(dbpath),
+		eng:    engine.NewEngine(dbpath),
 	}
 
 	// Uncomment and implement loading logic if needed
-	// err := interp.idx.LoadFromDisk()
+	// err := interp.eng.LoadFromDisk()
 	// if err != nil {
 	// 	return nil, err
 	// }
@@ -28,7 +28,7 @@ func NewInterpreter(dbpath string) (*Interpreter, error) {
 }
 
 /*func (i *Interpreter) Save() {
-	i.idx.FlushToDisk()
+	i.eng.FlushToDisk()
 }*/
 
 func (i *Interpreter) Execute(cmd *Command) error {
@@ -57,7 +57,7 @@ func (i *Interpreter) Execute(cmd *Command) error {
 }
 
 func (i *Interpreter) loadDb(user, dBName string) error {
-	i.idx.LoadDB(user, dBName)
+	i.eng.LoadDB(user, dBName)
 	return nil
 }
 func (i *Interpreter) cmdLs(args []string) error {
@@ -79,7 +79,7 @@ func (i *Interpreter) cmdSelect(args []string) error {
 				return fmt.Errorf("select db requiere nombre de base de datos")
 			}
 			dbName := args[1]
-			dbs := i.idx.ListDatabases()
+			dbs := i.eng.ListDatabases()
 			found := false
 			for _, d := range dbs {
 				if d == dbName {
@@ -103,7 +103,7 @@ func (i *Interpreter) cmdSelect(args []string) error {
 				return fmt.Errorf("select collection requiere nombre de colección")
 			}
 			colName := args[1]
-			cols, err := i.idx.ListCollections(i.CurrentDB)
+			cols, err := i.eng.ListCollections(i.CurrentDB)
 			if err != nil {
 				return err
 			}
@@ -135,11 +135,11 @@ func (i *Interpreter) cmdCreate(args []string) error {
 	} /*
 		switch args[0] {
 		case "db":
-			i.idx.CreateDatabase(args[1])
+			i.eng.CreateDatabase(args[1])
 		case "collections":
-			i.idx.CreateCollection(i.CurrentDB, args[1])
+			i.eng.CreateCollection(i.CurrentDB, args[1])
 		case "documents":
-			i.idx.CreateDocument(i.CurrentDB, i.CurrentColl, args[1])
+			i.eng.CreateDocument(i.CurrentDB, i.CurrentColl, args[1])
 		default:
 			return fmt.Errorf("unkown argument for create: %s", args[0])
 		}*/
@@ -162,11 +162,11 @@ func (i *Interpreter) cmdDelete(args []string) error {
 	/*
 		switch args[0] {
 		case "db":
-			i.idx.DeleteDatabase(args[1])
+			i.eng.DeleteDatabase(args[1])
 		case "collections":
-			i.idx.DeleteCollection(i.CurrentDB, args[1])
+			i.eng.DeleteCollection(i.CurrentDB, args[1])
 		case "documents":
-			i.idx.DeleteDocument(i.CurrentDB, i.CurrentColl, args[1])
+			i.eng.DeleteDocument(i.CurrentDB, i.CurrentColl, args[1])
 		default:
 			return fmt.Errorf("unkown argument for delete: %s", args[0])
 		}*/
