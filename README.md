@@ -1,4 +1,4 @@
-CobaltDB is a Graphical Database
+CobaltDB is a Graphical Database (Test)
 
 cobaltdb works with our own custom gnu/linux-like language:
 
