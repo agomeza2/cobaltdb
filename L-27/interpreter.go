@@ -1,7 +1,11 @@
 package l27
 
 import (
+<<<<<<< HEAD
 	storage "cobaltdb-local/Storage"
+=======
+	engine "cobaltdb-local/Main_comp"
+>>>>>>> d4edcdab84f14de434df0b3539422c949ad05a23
 	"fmt"
 )
 
@@ -9,17 +13,29 @@ type Interpreter struct {
 	DBPath      string
 	CurrentDB   string
 	CurrentUser string
+<<<<<<< HEAD
 	idx         *storage.Index
+=======
+	eng         *engine.Engine
+>>>>>>> d4edcdab84f14de434df0b3539422c949ad05a23
 }
 
 func NewInterpreter(dbpath string) (*Interpreter, error) {
 	interp := &Interpreter{
 		DBPath: dbpath,
+<<<<<<< HEAD
 		idx:    storage.NewIndex(dbpath),
 	}
 
 	// Uncomment and implement loading logic if needed
 	// err := interp.idx.LoadFromDisk()
+=======
+		eng:    engine.NewEngine(dbpath),
+	}
+
+	// Uncomment and implement loading logic if needed
+	// err := interp.eng.LoadFromDisk()
+>>>>>>> d4edcdab84f14de434df0b3539422c949ad05a23
 	// if err != nil {
 	// 	return nil, err
 	// }
@@ -28,7 +44,11 @@ func NewInterpreter(dbpath string) (*Interpreter, error) {
 }
 
 /*func (i *Interpreter) Save() {
+<<<<<<< HEAD
 	i.idx.FlushToDisk()
+=======
+	i.eng.FlushToDisk()
+>>>>>>> d4edcdab84f14de434df0b3539422c949ad05a23
 }*/
 
 func (i *Interpreter) Execute(cmd *Command) error {
@@ -57,7 +77,11 @@ func (i *Interpreter) Execute(cmd *Command) error {
 }
 
 func (i *Interpreter) loadDb(user, dBName string) error {
+<<<<<<< HEAD
 	i.idx.LoadDB(user, dBName)
+=======
+	i.eng.LoadDB(user, dBName)
+>>>>>>> d4edcdab84f14de434df0b3539422c949ad05a23
 	return nil
 }
 func (i *Interpreter) cmdLs(args []string) error {
@@ -79,7 +103,11 @@ func (i *Interpreter) cmdSelect(args []string) error {
 				return fmt.Errorf("select db requiere nombre de base de datos")
 			}
 			dbName := args[1]
+<<<<<<< HEAD
 			dbs := i.idx.ListDatabases()
+=======
+			dbs := i.eng.ListDatabases()
+>>>>>>> d4edcdab84f14de434df0b3539422c949ad05a23
 			found := false
 			for _, d := range dbs {
 				if d == dbName {
@@ -103,7 +131,11 @@ func (i *Interpreter) cmdSelect(args []string) error {
 				return fmt.Errorf("select collection requiere nombre de colección")
 			}
 			colName := args[1]
+<<<<<<< HEAD
 			cols, err := i.idx.ListCollections(i.CurrentDB)
+=======
+			cols, err := i.eng.ListCollections(i.CurrentDB)
+>>>>>>> d4edcdab84f14de434df0b3539422c949ad05a23
 			if err != nil {
 				return err
 			}
@@ -135,11 +167,19 @@ func (i *Interpreter) cmdCreate(args []string) error {
 	} /*
 		switch args[0] {
 		case "db":
+<<<<<<< HEAD
 			i.idx.CreateDatabase(args[1])
 		case "collections":
 			i.idx.CreateCollection(i.CurrentDB, args[1])
 		case "documents":
 			i.idx.CreateDocument(i.CurrentDB, i.CurrentColl, args[1])
+=======
+			i.eng.CreateDatabase(args[1])
+		case "collections":
+			i.eng.CreateCollection(i.CurrentDB, args[1])
+		case "documents":
+			i.eng.CreateDocument(i.CurrentDB, i.CurrentColl, args[1])
+>>>>>>> d4edcdab84f14de434df0b3539422c949ad05a23
 		default:
 			return fmt.Errorf("unkown argument for create: %s", args[0])
 		}*/
@@ -162,11 +202,19 @@ func (i *Interpreter) cmdDelete(args []string) error {
 	/*
 		switch args[0] {
 		case "db":
+<<<<<<< HEAD
 			i.idx.DeleteDatabase(args[1])
 		case "collections":
 			i.idx.DeleteCollection(i.CurrentDB, args[1])
 		case "documents":
 			i.idx.DeleteDocument(i.CurrentDB, i.CurrentColl, args[1])
+=======
+			i.eng.DeleteDatabase(args[1])
+		case "collections":
+			i.eng.DeleteCollection(i.CurrentDB, args[1])
+		case "documents":
+			i.eng.DeleteDocument(i.CurrentDB, i.CurrentColl, args[1])
+>>>>>>> d4edcdab84f14de434df0b3539422c949ad05a23
 		default:
 			return fmt.Errorf("unkown argument for delete: %s", args[0])
 		}*/
