@@ -1,4 +1,4 @@
-package storage 
+package storage
 
 import (
 	"fmt"
@@ -10,8 +10,7 @@ import (
 type Storage struct{}
 
 // createFolder creates a directory at the specified path
-func (s *Storage) createFolder(dbName string) {
-	path := "../db"
+func (s *Storage) createFolder(dbName string, path string) {
 	if dbName != "" {
 		path = filepath.Join(path, dbName)
 	}
@@ -26,17 +25,17 @@ func (s *Storage) createFolder(dbName string) {
 }
 
 // createDB creates a database structure with Nodes and Relations folders
-func (s *Storage) CreateDB(dbName, user string) {
+func (s *Storage) CreateDB(dbName, path string, user string) {
 	userPath := filepath.Join(user, dbName)
-	s.createFolder(userPath)
+	s.createFolder(dbName, userPath)
 
 	nodesPath := filepath.Join(userPath, "Nodes")
 	relationsPath := filepath.Join(userPath, "Relations")
-	s.createFolder(nodesPath)
-	s.createFolder(relationsPath)
+	s.createFolder(nodesPath, userPath)
+	s.createFolder(relationsPath, userPath)
 }
 
 // createUser creates a user directory
-func (s *Storage) CreateUser(userName string) {
-	s.createFolder(userName)
+func (s *Storage) CreateUser(userName string, path string) {
+	s.createFolder(userName, path)
 }

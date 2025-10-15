@@ -1,96 +1,66 @@
 CobaltDB is a Graphical Database
-cobaltdb works with our own custom SQL-like language:
+
+cobaltdb works with our own custom gnu/linux-like language:
+
 Keywords
-• SEARCH
-• WHERE
-• CATEGORY
-• SHOW
-• GRAPH
-• FUNC
-• CREATE
-• DBINT
-• DBFLOAT
-• DBSTRING
-• DBBOOL
-• DBDATE
-• COMMON
-• WHICH
-• FOR
-• WHILE
-• LOOP
-• IF
-• ELSE
-• ELIF
-• ALTER
-• REMOVE
-• DATABASE
-• DATABASES
-• USE
-• RELATION
-• NIL
-• AND
-• NOT
-• EQ
-• OR
-• TRUE
-• FALSE
-• GROUP BY
-• HOW MANY
-• RETURN
-• ADD
+• ls
+• cd 
+• rm
+• common
+• cat
+• touch
+• grep
+• modify
+• import
+• export
+• db 
+• node 
+• relation
+• user
+• admin 
+•nodes 
+•relations
 
-CREATE DATABASE test; //creamos la base de datos
+touch user Jhon admin //crear usuario 
+touch user Oswald  
+--despues de esto el gestor te pedira logeo --- 
 
-USE test; //seleccionamos la base de datos 
-
-//creamos directamente el nodo de una persona llamada Jo 
-(people:Jo)('Jo',35,2000.4,23/04/99);
+ls db; //vemos las bases de datos 
+touch db test; //creamos la base de datos
+cd test 
+touch node {category:people,name:jo,properties:{salary:3000,age:20}} //creamos directamente el nodo de una persona llamada Jo 
 
 //creamos multiples nodos llamados Lili, Martyn y Constance 
-(people:[Lili,Martyn,Constance])(['Lili',18,1000.3,04/05/08;
-'Martyn',45,4500,05/06/85;'Constance',49,3000.5,05/05/70]);
+touch nodes [{category:people,name:Lili,properties:{salary:5000,age:40}},{category:people,name:Martyn,properties:{salary:7000,age:90}},{category:people,name:Constance,properties:{salary:9000,age:50}}]
 //creamos una relacion 
-CREATE RELATION Teach(String name, int classroom, DATE date); 
+touch relation {category:teach,name:tutoria,properties:{classroom:202,time:"9:00"},source:0,target:89}// con los ID de los nodos de origen y destino 
 
-//asignamos una relacion entre Jo y constance, se lee como Jo ensenna a constance
-(people:Jo)=>(Teach):('tutoria',101,02/02/24)=>(people:Constance);
-
-//creamos multiple relaciones entre Martyn, Lili y Jo
-(people:[Martyn,Lili,Jo]) => (TEACH):([tutoria,101,02/03/22;clase,
-204,01/03/22;privada,303,01/03/22]) => (people:[Lili,Jo,Martyn]); 
-
+//creamos multiple relaciones entre Martyn, Lili y Jo 
+touch relations [{category:teach,name:tutoria2,properties:{classroom:302,time:"8:00"},source:1,target:99},{category:teach,name:tutoria3,properties:{classroom:202,time:"10:00"},source:5,target:89},{category:teach,name:tutoria4,properties:{classroom:502,time:"7:00"},source:0,target:99}]
 //vemos los atributos de Martyn
-SHOW (people:Martyn);
+cat node ID:10 
 
+cat node name:Martyn //muestra no solo un nodo sino todos los llamados Martyn, asi con mas atributos
+
+cat relation tutoria //muestra las relaciones con nombre tutoria 
 //Cambiamos la edad de Martyn 
-ALTER (people:Martyn):(int age: 55);
+modify node ID:10 name:Oswald
+
+modify node name:Martyn age:26 
 
 //quitamos un atributo a Martyn 
-REMOVE (people:Martyn):(DATE birth);
-
-//le volvemos a colocar el atributo birth, pero aparecera como NIL
-ADD (people:Martyn)(Date birth)
+rm node name:Martyn age 
+rm relation classroom:205 ID:89 
+//le volvemos a colocar el atributo age, pero aparecera como NIL
+add node name:Martyn age:23 
+add relation ID:89 classroom:35 
 
 //vemos los nodos en comun entre Martyn y Lili
-COMMON (people:Martyn) (people:Lili)
-
-//buscamos nodos por los parametros de edad 
-SEARCH INT age WHERE age = 18
-
-//buscamos relaciones con los parametros de salon
-SEARCH INT classroom WHERE classroom = 101
-
-//buscamos nodos y los organizamos de forma ascendente 
-SEARCH String name ASC;
-
-//buscamos nodos y los organizamos de forma descendente 
-SEARCH String name DESC
-
-//buscamos nodos de la categoria people y los agrupamos por edad, default es ascendente 
-SEARCH people GROUP BY age ;
-
-//buscamos cuantos nodos de la categoria people hay 
-HOW MANY people;
-
-//buscamos cuantas relaciones de la categoria teach existen
-HOW MANY Teach;
+common ID:10 ID:20 
+rm db test //Eliminamos la base de datos 
+grep age:26 //busca entre todos los nodos y las relaciones, los nodos o relaciones con la propiedad 
+ls nodes //lista de todos los nodos 
+ls relations //lista de todas las relaciones 
+LIST NODES 
+IMPORT ../salary_country.xlsx 
+EXPORT DATABASE test
